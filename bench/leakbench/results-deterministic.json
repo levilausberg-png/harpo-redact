@@ -1,0 +1,309 @@
+{
+ "config": "deterministic",
+ "corpus": {
+  "cases": 1350,
+  "secrets": 1280,
+  "trap_cases": 70,
+  "keep_phrases": 2770,
+  "sha256": "71da51a13d5855db"
+ },
+ "raw_identifier_escapes": 116,
+ "recall": 0.9094,
+ "false_positive_rate": 0.0,
+ "false_block_rate": 0.0,
+ "by_category": {
+  "bsn": {
+   "secrets": 120,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "card": {
+   "secrets": 180,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "email": {
+   "secrets": 260,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "iban": {
+   "secrets": 140,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "name": {
+   "secrets": 120,
+   "escapes": 116,
+   "recall": 0.0333
+  },
+  "phone": {
+   "secrets": 160,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "secret": {
+   "secrets": 140,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "seed_phrase": {
+   "secrets": 60,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "ssn": {
+   "secrets": 100,
+   "escapes": 0,
+   "recall": 1.0
+  }
+ },
+ "by_attack": {
+  "base64": {
+   "secrets": 160,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "base64url": {
+   "secrets": 40,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "base64x2": {
+   "secrets": 60,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "bidi": {
+   "secrets": 100,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "fullwidth": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "homoglyph": {
+   "secrets": 40,
+   "escapes": 20,
+   "recall": 0.5
+  },
+  "html_entity": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "json_escape": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "leetspeak": {
+   "secrets": 40,
+   "escapes": 20,
+   "recall": 0.5
+  },
+  "lowercase": {
+   "secrets": 40,
+   "escapes": 20,
+   "recall": 0.5
+  },
+  "plain": {
+   "secrets": 180,
+   "escapes": 17,
+   "recall": 0.9056
+  },
+  "spaced": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "spelled_out": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "split_lines": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "spoken": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "uppercase": {
+   "secrets": 60,
+   "escapes": 20,
+   "recall": 0.6667
+  },
+  "url_encoded": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "zero_width": {
+   "secrets": 160,
+   "escapes": 19,
+   "recall": 0.8812
+  }
+ },
+ "by_language": {
+  "de": {
+   "secrets": 256,
+   "escapes": 24,
+   "recall": 0.9062
+  },
+  "en": {
+   "secrets": 256,
+   "escapes": 24,
+   "recall": 0.9062
+  },
+  "es": {
+   "secrets": 256,
+   "escapes": 24,
+   "recall": 0.9062
+  },
+  "fr": {
+   "secrets": 256,
+   "escapes": 24,
+   "recall": 0.9062
+  },
+  "nl": {
+   "secrets": 256,
+   "escapes": 20,
+   "recall": 0.9219
+  }
+ },
+ "latency_ms": {
+  "p50": 2.06,
+  "p95": 3.9,
+  "p99": 18.2,
+  "mean": 2.44
+ },
+ "throughput_cases_per_s": 408.5,
+ "cpu_s": 3.22,
+ "max_rss_mb": 75.9,
+ "escapes": [
+  "name-plain-en-0",
+  "name-plain-en-1",
+  "name-plain-en-2",
+  "name-plain-en-3",
+  "name-plain-nl-3",
+  "name-plain-de-0",
+  "name-plain-de-1",
+  "name-plain-de-2",
+  "name-plain-de-3",
+  "name-plain-fr-0",
+  "name-plain-fr-1",
+  "name-plain-fr-2",
+  "name-plain-fr-3",
+  "name-plain-es-0",
+  "name-plain-es-1",
+  "name-plain-es-2",
+  "name-plain-es-3",
+  "name-lowercase-en-0",
+  "name-lowercase-en-1",
+  "name-lowercase-en-2",
+  "name-lowercase-en-3",
+  "name-lowercase-nl-0",
+  "name-lowercase-nl-1",
+  "name-lowercase-nl-2",
+  "name-lowercase-nl-3",
+  "name-lowercase-de-0",
+  "name-lowercase-de-1",
+  "name-lowercase-de-2",
+  "name-lowercase-de-3",
+  "name-lowercase-fr-0",
+  "name-lowercase-fr-1",
+  "name-lowercase-fr-2",
+  "name-lowercase-fr-3",
+  "name-lowercase-es-0",
+  "name-lowercase-es-1",
+  "name-lowercase-es-2",
+  "name-lowercase-es-3",
+  "name-uppercase-en-0",
+  "name-uppercase-en-1",
+  "name-uppercase-en-2",
+  "name-uppercase-en-3",
+  "name-uppercase-nl-0",
+  "name-uppercase-nl-1",
+  "name-uppercase-nl-2",
+  "name-uppercase-nl-3",
+  "name-uppercase-de-0",
+  "name-uppercase-de-1",
+  "name-uppercase-de-2",
+  "name-uppercase-de-3",
+  "name-uppercase-fr-0",
+  "name-uppercase-fr-1",
+  "name-uppercase-fr-2",
+  "name-uppercase-fr-3",
+  "name-uppercase-es-0",
+  "name-uppercase-es-1",
+  "name-uppercase-es-2",
+  "name-uppercase-es-3",
+  "name-homoglyph-en-0",
+  "name-homoglyph-en-1",
+  "name-homoglyph-en-2",
+  "name-homoglyph-en-3",
+  "name-homoglyph-nl-0",
+  "name-homoglyph-nl-1",
+  "name-homoglyph-nl-2",
+  "name-homoglyph-nl-3",
+  "name-homoglyph-de-0",
+  "name-homoglyph-de-1",
+  "name-homoglyph-de-2",
+  "name-homoglyph-de-3",
+  "name-homoglyph-fr-0",
+  "name-homoglyph-fr-1",
+  "name-homoglyph-fr-2",
+  "name-homoglyph-fr-3",
+  "name-homoglyph-es-0",
+  "name-homoglyph-es-1",
+  "name-homoglyph-es-2",
+  "name-homoglyph-es-3",
+  "name-leetspeak-en-0",
+  "name-leetspeak-en-1",
+  "name-leetspeak-en-2",
+  "name-leetspeak-en-3",
+  "name-leetspeak-nl-0",
+  "name-leetspeak-nl-1",
+  "name-leetspeak-nl-2",
+  "name-leetspeak-nl-3",
+  "name-leetspeak-de-0",
+  "name-leetspeak-de-1",
+  "name-leetspeak-de-2",
+  "name-leetspeak-de-3",
+  "name-leetspeak-fr-0",
+  "name-leetspeak-fr-1",
+  "name-leetspeak-fr-2",
+  "name-leetspeak-fr-3",
+  "name-leetspeak-es-0",
+  "name-leetspeak-es-1",
+  "name-leetspeak-es-2",
+  "name-leetspeak-es-3",
+  "name-zero_width-en-0",
+  "name-zero_width-en-1",
+  "name-zero_width-en-2",
+  "name-zero_width-en-3",
+  "name-zero_width-nl-0",
+  "name-zero_width-nl-2",
+  "name-zero_width-nl-3",
+  "name-zero_width-de-0",
+  "name-zero_width-de-1",
+  "name-zero_width-de-2",
+  "name-zero_width-de-3",
+  "name-zero_width-fr-0",
+  "name-zero_width-fr-1",
+  "name-zero_width-fr-2",
+  "name-zero_width-fr-3",
+  "name-zero_width-es-0",
+  "name-zero_width-es-1",
+  "name-zero_width-es-2",
+  "name-zero_width-es-3"
+ ],
+ "false_positives": [],
+ "false_blocks": []
+}

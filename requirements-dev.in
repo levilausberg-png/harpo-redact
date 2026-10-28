@@ -1,0 +1,15 @@
+# Input for requirements-dev.lock: uv pip compile requirements-dev.in -c requirements.lock --generate-hashes --universal --python-version 3.12 (then drop what requirements.lock pins)
+pytest==9.1.1
+pytest-asyncio==1.4.0
+hypothesis==6.168.3
+ruff==0.16.10
+mypy==2.3.1
+bandit==1.9.4
+pip-audit==2.10.1
+types-PyYAML
+python-docx==1.2.0
+openpyxl==3.1.5
+python-pptx==1.0.2
+reportlab==4.4.10
+rstr==3.2.2
+playwright==1.56.0

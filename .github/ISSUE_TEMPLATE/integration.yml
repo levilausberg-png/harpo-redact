@@ -1,0 +1,14 @@
+name: Integration request or problem
+description: An app, agent or SDK you want to use with the gateway
+labels: [integration]
+body:
+  - type: input
+    id: tool
+    attributes: { label: Tool, placeholder: "e.g. Raycast AI, Windsurf, Semantic Kernel" }
+    validations: { required: true }
+  - type: textarea
+    id: setting
+    attributes: { label: How it connects to a model, description: "Does it let you set an OpenAI or Anthropic base URL? Link the docs if you know them." }
+  - type: textarea
+    id: error
+    attributes: { label: What happens, description: "Status code and gateway error code if it fails. Field paths are fine; no prompt content." }

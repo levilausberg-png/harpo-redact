@@ -1,0 +1,86 @@
+# Harpo with an optional local SLM (Ollama).
+# CI runs tools/docker_smoke.py against this file on every push and before every release: the gateway as configured
+# here (read-only root filesystem, no capabilities, the policy volume) with a fake provider, through a restart and a
+# recreated container. Try a staging deployment before production all the same.
+#
+#   cp config/harpo.example.yaml config/harpo.yaml   # then edit keys, models, hosts
+#   docker compose up -d --build                          # gateway only
+#   docker compose --profile slm-setup run --rm ollama-pull   # once: download the SLM
+#   docker compose --profile slm up -d                    # gateway + Ollama sidecar
+name: harpo-redact
+
+services:
+  gateway:
+    build: .
+    image: harpo-redact:2.5.0
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    ulimits:
+      core: 0                       # no core dumps: they would contain prompts
+    pids_limit: 256
+    mem_limit: 1g
+    environment:
+      HARPO_CONFIG: /etc/harpo/harpo.yaml
+      HARPO_POLICY__LIVE_FILE: /var/lib/harpo/policy.live.yaml   # the console's Policy page saves here
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes:
+      - ./config/harpo.yaml:/etc/harpo/harpo.yaml:ro
+      - policy:/var/lib/harpo   # live policy: survives restarts; every worker watches the file
+    ports:
+      - "127.0.0.1:8080:8080"       # publish on an internal interface or behind your TLS ingress
+    networks: [egress, internal]
+
+  # docker compose --profile chat up -d   ->  Open WebUI on http://localhost:3000, every chat through the gateway.
+  # Set HARPO_KEY to a gateway key (harpo init) and server.host to 0.0.0.0 in the gateway config.
+  open-webui:
+    profiles: [chat]
+    image: ghcr.io/open-webui/open-webui:v0.11.4   # a release, not :main; Dependabot proposes newer ones
+    restart: unless-stopped
+    environment:
+      OPENAI_API_BASE_URL: http://gateway:8080/v1
+      # Not ${HARPO_KEY:?...}: Compose resolves every service's variables, even in a profile that is not started,
+      # so a required variable here would stop `docker compose up` for the gateway alone.
+      OPENAI_API_KEY: ${HARPO_KEY:-}
+      ENABLE_OLLAMA_API: "false"
+    volumes:
+      - open-webui:/app/backend/data
+    ports:
+      - "127.0.0.1:3000:8080"
+    depends_on: [gateway]
+    networks: [internal, egress]
+
+  ollama:
+    profiles: [slm]
+    image: ollama/ollama:0.21.0     # pin by digest in production: ollama/ollama@sha256:...
+    restart: unless-stopped
+    environment:
+      OLLAMA_KEEP_ALIVE: 30m
+      OLLAMA_HOST: 0.0.0.0:11434
+    volumes:
+      - ollama-models:/root/.ollama
+    security_opt: ["no-new-privileges:true"]
+    networks: [internal]            # no route to the internet
+
+  ollama-pull:
+    profiles: [slm-setup]
+    image: ollama/ollama:0.21.0
+    entrypoint: ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull llama3.2:3b"]
+    volumes:
+      - ollama-models:/root/.ollama
+    networks: [egress]              # the only service besides the gateway with internet access
+
+networks:
+  egress: {}
+  internal:
+    internal: true
+
+volumes:
+  policy: {}
+  open-webui:
+  ollama-models: {}

@@ -1,0 +1,47 @@
+name: provider-smoke
+# Real requests through Harpo to your providers, without a terminal: add OPENAI_API_KEY and/or ANTHROPIC_API_KEY under
+# Settings, Secrets and variables, Actions; then Actions, provider-smoke, Run workflow. A request, streaming, a tool
+# call and its result, a provider error and a cancelled stream, for each provider with a key. Costs a few cents.
+on:
+  workflow_dispatch:
+    inputs:
+      openai_model:
+        description: "OpenAI model (leave empty to skip OpenAI)"
+        default: gpt-5-mini
+        required: false
+      anthropic_model:
+        description: "Anthropic model (leave empty to skip Anthropic)"
+        default: claude-haiku-5-5
+        required: false
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install Harpo (hash-pinned)
+        run: |
+          python -m pip install --require-hashes --no-deps -r requirements.lock -r requirements-models.lock
+          python -m pip install --no-deps .
+      - name: Requests through Harpo to your providers
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_MODEL: ${{ inputs.openai_model }}
+          ANTHROPIC_MODEL: ${{ inputs.anthropic_model }}
+        run: |
+          args=()
+          if [ -n "$OPENAI_API_KEY" ] && [ -n "$OPENAI_MODEL" ]; then args+=(--openai-model "$OPENAI_MODEL"); fi
+          if [ -n "$ANTHROPIC_API_KEY" ] && [ -n "$ANTHROPIC_MODEL" ]; then args+=(--anthropic-model "$ANTHROPIC_MODEL"); fi
+          if [ ${#args[@]} -eq 0 ]; then
+            echo "::error::Add OPENAI_API_KEY and/or ANTHROPIC_API_KEY as repository secrets (Settings, Secrets and variables, Actions)."
+            exit 1
+          fi
+          python tools/provider_smoke.py --start "${args[@]}"

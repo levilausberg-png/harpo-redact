@@ -1,0 +1,88 @@
+/* Harpo design tokens. Every gradient used anywhere is named here, with the reason it exists. */
+@font-face { font-family: "Geist"; src: url("/console/fonts/geist.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("/console/fonts/geist-mono.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+/* Harpo: Midnight Slate, a silver harp, jade strings, a crimson rose. Colour encodes meaning: jade is what Harpo
+   silenced or verified, rose is what it held back (and the crown of the mark), amber asks for attention. */
+:root {
+  color-scheme: dark;
+  --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* brand */
+  --slate: #0f172a; --silver: #e2e8f0; --jade: #2ee6a8; --rose: #f7608a; --rose-deep: #e11d48; --gold: #fde68a;
+  /* canvas and surfaces: Midnight Slate, tonal steps */
+  --bg: #0f172a; --bg-2: #0d1526; --s1: #121c31; --s2: #16213a; --s3: #1c2944; --inset: #0a1222; --glass: rgba(15, 23, 42, .74);
+  --line: rgba(148, 163, 184, .11); --line-2: rgba(148, 163, 184, .16); --line-3: rgba(148, 163, 184, .26);
+  --t1: #e6ebf4; --t2: #a7b1c4; --t3: #8d98ad; --t4: #8590a5;
+  /* accents and semantics */
+  --indigo: #7c86f7; --violet: #a49bff; --cobalt: #5ea8f5; --cyan: #4fc3e8; --teal: #2ee6a8;
+  --ok: #34e0a1; --warn: #f4b54c; --bad: #f7608a; --info: #5ea8f5;
+  --det: #5ea8f5;   /* deterministic layers */
+  --prob: #a49bff;  /* probabilistic layers: NER, SLM */
+  --ver: #2ee6a8;   /* verified output */
+  /* named gradients */
+  --g-brand: linear-gradient(105deg, #f7608a 0%, #c45bd4 30%, #6b8cf2 64%, #2ee6a8 100%);       /* identity, posture */
+  --g-flow: linear-gradient(90deg, #6b8cf2, #4fc3e8 50%, #2ee6a8);                               /* request path */
+  --g-assure: linear-gradient(105deg, #4fc3e8, #2ee6a8);                                        /* verified states */
+  --g-active: linear-gradient(180deg, #2ee6a8, #4fc3e8 60%, #6b8cf2);                            /* selection rail */
+  --g-danger: linear-gradient(105deg, #f4b54c, #f7608a);                                        /* security-critical */
+  --g-wash: radial-gradient(900px 340px at 12% -8%, rgba(247, 96, 138, .075), transparent 70%),
+            radial-gradient(700px 300px at 88% -12%, rgba(46, 230, 168, .06), transparent 70%); /* page atmosphere */
+  --grid: rgba(148, 163, 184, .035);
+  /* geometry */
+  --r-xl: 13px; --r-lg: 11px; --r: 9px; --r-sm: 7px; --r-xs: 5px;
+  --side: 236px; --side-compact: 60px; --top: 54px;
+  /* depth */
+  --sh-1: 0 1px 0 rgba(226, 232, 240, .035) inset;
+  --sh-2: 0 1px 0 rgba(226, 232, 240, .05) inset, 0 12px 32px -18px rgba(2, 6, 23, .85);
+  --sh-pop: 0 1px 0 rgba(226, 232, 240, .07) inset, 0 24px 60px -20px rgba(2, 6, 23, .9);
+  --blur: saturate(140%) blur(18px);
+  --t-fast: 120ms; --t: 180ms; --ease: cubic-bezier(.2, .7, .2, 1);
+  --z-top: 30; --z-side: 40; --z-drawer: 70; --z-pop: 90;
+  /* charts */
+  --ch-1: #2ee6a8; --ch-2: #6b8cf2; --ch-3: #f7608a; --ch-4: #a49bff; --ch-5: #f4b54c;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --jade: #037a5a; --rose: #c81e4b; --rose-deep: #be123c;
+  --bg: #f8fafc; --bg-2: #f1f5f9; --s1: #ffffff; --s2: #fbfcfe; --s3: #eef2f7; --inset: #f1f5f9; --glass: rgba(255, 255, 255, .8);
+  --line: rgba(15, 23, 42, .08); --line-2: rgba(15, 23, 42, .12); --line-3: rgba(15, 23, 42, .2);
+  --t1: #0f172a; --t2: #475569; --t3: #596579; --t4: #5f6b7e;
+  --indigo: #5257d9; --violet: #6d4fe0; --cobalt: #2563eb; --cyan: #0b8fb3; --teal: #037a5a;
+  --ok: #047857; --warn: #a35c07; --bad: #c81e4b; --info: #2563eb; --det: #1d72c9; --prob: #6d4fe0; --ver: #037a5a;
+  --g-brand: linear-gradient(105deg, #c81e4b 0%, #a03fbd 30%, #3f67d8 64%, #037a5a 100%);
+  --g-flow: linear-gradient(90deg, #3f67d8, #0b8fb3 50%, #037a5a); --g-assure: linear-gradient(105deg, #0b7fa6, #037a5a);
+  --g-active: linear-gradient(180deg, #037a5a, #0b8fb3 60%, #3f67d8); --g-danger: linear-gradient(105deg, #a35c07, #c81e4b);
+  --g-wash: radial-gradient(900px 340px at 12% -8%, rgba(200, 30, 75, .05), transparent 70%),
+            radial-gradient(700px 300px at 88% -12%, rgba(3, 122, 90, .045), transparent 70%);
+  --grid: rgba(15, 23, 42, .035);
+  --sh-1: 0 1px 2px rgba(15, 23, 42, .04);
+  --sh-2: 0 1px 2px rgba(15, 23, 42, .05), 0 10px 28px -18px rgba(15, 23, 42, .22);
+  --sh-pop: 0 20px 50px -20px rgba(15, 23, 42, .3), 0 2px 8px rgba(15, 23, 42, .08);
+  --ch-1: #037a5a; --ch-2: #3f67d8; --ch-3: #c81e4b; --ch-4: #6d4fe0; --ch-5: #a35c07;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --jade: #037a5a; --rose: #c81e4b; --rose-deep: #be123c;
+    --bg: #f8fafc; --bg-2: #f1f5f9; --s1: #ffffff; --s2: #fbfcfe; --s3: #eef2f7; --inset: #f1f5f9; --glass: rgba(255, 255, 255, .8);
+    --line: rgba(15, 23, 42, .08); --line-2: rgba(15, 23, 42, .12); --line-3: rgba(15, 23, 42, .2);
+    --t1: #0f172a; --t2: #475569; --t3: #596579; --t4: #5f6b7e;
+    --indigo: #5257d9; --violet: #6d4fe0; --cobalt: #2563eb; --cyan: #0b8fb3; --teal: #037a5a;
+    --ok: #047857; --warn: #a35c07; --bad: #c81e4b; --info: #2563eb; --det: #1d72c9; --prob: #6d4fe0; --ver: #037a5a;
+    --g-brand: linear-gradient(105deg, #c81e4b 0%, #a03fbd 30%, #3f67d8 64%, #037a5a 100%);
+    --g-flow: linear-gradient(90deg, #3f67d8, #0b8fb3 50%, #037a5a); --g-assure: linear-gradient(105deg, #0b7fa6, #037a5a);
+    --g-active: linear-gradient(180deg, #037a5a, #0b8fb3 60%, #3f67d8); --g-danger: linear-gradient(105deg, #a35c07, #c81e4b);
+    --g-wash: radial-gradient(900px 340px at 12% -8%, rgba(200, 30, 75, .05), transparent 70%), radial-gradient(700px 300px at 88% -12%, rgba(3, 122, 90, .045), transparent 70%);
+    --grid: rgba(15, 23, 42, .035);
+    --sh-1: 0 1px 2px rgba(15, 23, 42, .04); --sh-2: 0 1px 2px rgba(15, 23, 42, .05), 0 10px 28px -18px rgba(15, 23, 42, .22);
+    --sh-pop: 0 20px 50px -20px rgba(15, 23, 42, .3), 0 2px 8px rgba(15, 23, 42, .08);
+    --ch-1: #037a5a; --ch-2: #3f67d8; --ch-3: #c81e4b; --ch-4: #6d4fe0; --ch-5: #a35c07;
+  }
+}
+
+/* Motion: one language for the whole console. Most interactions 100-200 ms; nothing decorative loops. */
+:root {
+  --motion-instant: 80ms; --motion-fast: 120ms; --motion-normal: 180ms; --motion-slow: 260ms; --motion-emphasis: 360ms;
+  --ease-standard: cubic-bezier(.2, .7, .2, 1); --ease-enter: cubic-bezier(.16, 1, .3, 1); --ease-exit: cubic-bezier(.4, 0, 1, 1);
+  --ease-data: cubic-bezier(.25, .1, .25, 1); --ease-layout: cubic-bezier(.3, .9, .3, 1);
+}

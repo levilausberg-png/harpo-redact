@@ -1,0 +1,17 @@
+# Hash-pinned: the spaCy language models the tests and LeakBench use (CI installs all six).
+# en, de and xx are MIT and ship in the Docker image (src/harpo_redact/presets.py, Dockerfile); nl (CC BY-SA 4.0),
+# fr (LGPL-LR) and es (GPL-3.0) are opt-in there because of their licences. tests/test_release_gates.py keeps the
+# three places in step.
+# pip install --require-hashes --no-deps -r requirements-models.lock
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
+de-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.8.0/de_core_news_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:fec69fec52b1780f2d269d5af7582a5e28028738bd3190532459aeb473bfa3e7
+xx-ent-wiki-sm @ https://github.com/explosion/spacy-models/releases/download/xx_ent_wiki_sm-3.8.0/xx_ent_wiki_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:6f3c4b853852ea9e9d2dc76cc950dddb10a7e4c42d813308caefe6c5e8be2f0a
+nl-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/nl_core_news_sm-3.8.0/nl_core_news_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:a76978477821f213ca76a46c686df1b1d41462905d4868bc53eac086adca8b7e
+fr-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.8.0/fr_core_news_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:7d6ad14cd5078e53147bfbf70fb9d433c6a3865b695fda2657140bbc59a27e29
+es-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.8.0/es_core_news_sm-3.8.0-py3-none-any.whl \
+    --hash=sha256:e451a83d6df79b87e9eed0cb553f03e99e36a3bab18a7b79f0dcfd1fdf875e12

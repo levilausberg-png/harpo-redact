@@ -1,0 +1,21 @@
+# Zero-config demo: the gateway with a fake provider, and Open WebUI wired to it. No accounts, no keys.
+#   docker compose -f docker-compose.demo.yml up --build
+#   console:    http://localhost:8080      chat UI:  http://localhost:3000
+# The fake provider echoes what it receives, so you see exactly what would leave your machine.
+# CI starts this file's gateway and checks its answers on every push (tools/docker_smoke.py).
+name: harpo-demo
+services:
+  gateway:
+    build: .
+    image: harpo-redact:2.5.0
+    command: ["demo", "--host", "0.0.0.0", "--no-browser"]
+    ports: ["127.0.0.1:8080:8080"]
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.11.4   # a release, not :main
+    environment:
+      OPENAI_API_BASE_URL: http://gateway:8080/v1
+      OPENAI_API_KEY: demo
+      ENABLE_OLLAMA_API: "false"
+      WEBUI_AUTH: "false"
+    ports: ["127.0.0.1:3000:8080"]
+    depends_on: [gateway]

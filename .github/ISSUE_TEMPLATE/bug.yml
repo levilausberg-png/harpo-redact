@@ -1,0 +1,21 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Use made-up values only. A value reaching a provider is a security issue: report it privately (SECURITY.md)."
+  - type: input
+    id: version
+    attributes: { label: Version, placeholder: "shown in the console sidebar, or pip show harpo-redact" }
+    validations: { required: true }
+  - type: dropdown
+    id: install
+    attributes: { label: How do you run it, options: [Docker, pip / pipx, From source, Other] }
+  - type: textarea
+    id: what
+    attributes: { label: What happened, description: "Request shape (field names only), response status and error code, relevant log lines (they never contain content)." }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: What you expected }

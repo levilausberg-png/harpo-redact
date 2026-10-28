@@ -1,0 +1,630 @@
+{
+ "dataset": "openpii",
+ "file": "validation.jsonl",
+ "file_sha256": "c2175f3146a8afd658f3540f3db3c8ea0fb73ab6fe206bfff1579361b1627e5b",
+ "documents": 10000,
+ "limit": null,
+ "half": null,
+ "config": "default-image",
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "8f55a57e33859c11efa02593bcfb1ea2ce6318dd5eaec03b46227f5d58617349",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "scope_sha256": "e4f5161128b412a86f101dbc0bf94be72fd2dd9fa21226712188c2a13b625ddf",
+ "harness_sha256": "640bc588a6fe40673b9191a4a6b40aadf5fe6c90866f4e0f7bb1653bc86e560b",
+ "started": "2026-10-13T23:57:25+00:00",
+ "seconds": 59.9,
+ "metrics": {
+  "documents": 10000,
+  "in_scope": {
+   "spans": 51953,
+   "redacted": 26065,
+   "blocked": 0,
+   "partial": 1936,
+   "leaked": 23952,
+   "recall": 0.5017,
+   "recall_any": 0.539
+  },
+  "all_labels": {
+   "spans": 72597,
+   "redacted": 30186,
+   "blocked": 0,
+   "partial": 2101,
+   "leaked": 40310,
+   "recall": 0.4158,
+   "recall_any": 0.4447
+  },
+  "out_of_scope": {
+   "spans": 20644,
+   "redacted": 4121,
+   "blocked": 0,
+   "partial": 165,
+   "leaked": 16358,
+   "recall": 0.1996,
+   "recall_any": 0.2076
+  },
+  "unmapped": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped_labels": [],
+  "per_label": {
+   "AGE": {
+    "spans": 3566,
+    "redacted": 7,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 3559,
+    "recall": 0.002,
+    "recall_any": 0.002,
+    "scope": "out"
+   },
+   "AMOUNT": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "out"
+   },
+   "BANKNAME": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "in"
+   },
+   "BUILDINGNUM": {
+    "spans": 3450,
+    "redacted": 448,
+    "blocked": 0,
+    "partial": 17,
+    "leaked": 2985,
+    "recall": 0.1299,
+    "recall_any": 0.1348,
+    "scope": "in"
+   },
+   "CITY": {
+    "spans": 5075,
+    "redacted": 3258,
+    "blocked": 0,
+    "partial": 625,
+    "leaked": 1192,
+    "recall": 0.642,
+    "recall_any": 0.7651,
+    "scope": "in"
+   },
+   "COUNTRY": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "in"
+   },
+   "CREDITCARDNUMBER": {
+    "spans": 2267,
+    "redacted": 197,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 2070,
+    "recall": 0.0869,
+    "recall_any": 0.0869,
+    "scope": "in"
+   },
+   "DATE": {
+    "spans": 8572,
+    "redacted": 309,
+    "blocked": 0,
+    "partial": 119,
+    "leaked": 8144,
+    "recall": 0.036,
+    "recall_any": 0.0499,
+    "scope": "out"
+   },
+   "DRIVERLICENSENUM": {
+    "spans": 2001,
+    "redacted": 254,
+    "blocked": 0,
+    "partial": 18,
+    "leaked": 1729,
+    "recall": 0.1269,
+    "recall_any": 0.1359,
+    "scope": "in"
+   },
+   "EMAIL": {
+    "spans": 5427,
+    "redacted": 5378,
+    "blocked": 0,
+    "partial": 39,
+    "leaked": 10,
+    "recall": 0.991,
+    "recall_any": 0.9982,
+    "scope": "in"
+   },
+   "GENDER": {
+    "spans": 1903,
+    "redacted": 803,
+    "blocked": 0,
+    "partial": 37,
+    "leaked": 1063,
+    "recall": 0.422,
+    "recall_any": 0.4414,
+    "scope": "out"
+   },
+   "GIVENNAME": {
+    "spans": 8489,
+    "redacted": 6383,
+    "blocked": 0,
+    "partial": 232,
+    "leaked": 1874,
+    "recall": 0.7519,
+    "recall_any": 0.7792,
+    "scope": "in"
+   },
+   "IDCARDNUM": {
+    "spans": 2337,
+    "redacted": 218,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 2118,
+    "recall": 0.0933,
+    "recall_any": 0.0937,
+    "scope": "in"
+   },
+   "ORGANISATION": {
+    "spans": 3,
+    "redacted": 1,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 2,
+    "recall": 0.3333,
+    "recall_any": 0.3333,
+    "scope": "in"
+   },
+   "PASSPORTNUM": {
+    "spans": 1391,
+    "redacted": 201,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1190,
+    "recall": 0.1445,
+    "recall_any": 0.1445,
+    "scope": "in"
+   },
+   "SEX": {
+    "spans": 1773,
+    "redacted": 358,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1415,
+    "recall": 0.2019,
+    "recall_any": 0.2019,
+    "scope": "out"
+   },
+   "SOCIALNUM": {
+    "spans": 1745,
+    "redacted": 478,
+    "blocked": 0,
+    "partial": 17,
+    "leaked": 1250,
+    "recall": 0.2739,
+    "recall_any": 0.2837,
+    "scope": "in"
+   },
+   "STREET": {
+    "spans": 3486,
+    "redacted": 1627,
+    "blocked": 0,
+    "partial": 592,
+    "leaked": 1267,
+    "recall": 0.4667,
+    "recall_any": 0.6365,
+    "scope": "in"
+   },
+   "SURNAME": {
+    "spans": 7287,
+    "redacted": 5629,
+    "blocked": 0,
+    "partial": 216,
+    "leaked": 1442,
+    "recall": 0.7725,
+    "recall_any": 0.8021,
+    "scope": "in"
+   },
+   "TAXNUM": {
+    "spans": 1850,
+    "redacted": 419,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 1425,
+    "recall": 0.2265,
+    "recall_any": 0.2297,
+    "scope": "in"
+   },
+   "TELEPHONENUM": {
+    "spans": 3998,
+    "redacted": 1231,
+    "blocked": 0,
+    "partial": 170,
+    "leaked": 2597,
+    "recall": 0.3079,
+    "recall_any": 0.3504,
+    "scope": "in"
+   },
+   "TIME": {
+    "spans": 124,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 121,
+    "recall": 0.0,
+    "recall_any": 0.0242,
+    "scope": "out"
+   },
+   "TITLE": {
+    "spans": 4705,
+    "redacted": 2644,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 2055,
+    "recall": 0.562,
+    "recall_any": 0.5632,
+    "scope": "out"
+   },
+   "ZIPCODE": {
+    "spans": 3145,
+    "redacted": 343,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 2799,
+    "recall": 0.1091,
+    "recall_any": 0.11,
+    "scope": "in"
+   }
+  },
+  "unlocated_values": 0,
+  "blocked_documents": 0,
+  "block_reasons": {},
+  "errors": {},
+  "unplaced_findings": 0,
+  "by_language": {
+   "bg": {
+    "spans": 1489,
+    "redacted": 671,
+    "blocked": 0,
+    "partial": 90,
+    "leaked": 728,
+    "recall": 0.4506,
+    "recall_any": 0.5111
+   },
+   "cs": {
+    "spans": 1340,
+    "redacted": 617,
+    "blocked": 0,
+    "partial": 74,
+    "leaked": 649,
+    "recall": 0.4604,
+    "recall_any": 0.5157
+   },
+   "da": {
+    "spans": 1385,
+    "redacted": 684,
+    "blocked": 0,
+    "partial": 32,
+    "leaked": 669,
+    "recall": 0.4939,
+    "recall_any": 0.517
+   },
+   "de": {
+    "spans": 3444,
+    "redacted": 1941,
+    "blocked": 0,
+    "partial": 101,
+    "leaked": 1402,
+    "recall": 0.5636,
+    "recall_any": 0.5929
+   },
+   "el": {
+    "spans": 1430,
+    "redacted": 579,
+    "blocked": 0,
+    "partial": 36,
+    "leaked": 815,
+    "recall": 0.4049,
+    "recall_any": 0.4301
+   },
+   "en": {
+    "spans": 7137,
+    "redacted": 4203,
+    "blocked": 0,
+    "partial": 219,
+    "leaked": 2715,
+    "recall": 0.5889,
+    "recall_any": 0.6196
+   },
+   "es": {
+    "spans": 2806,
+    "redacted": 1572,
+    "blocked": 0,
+    "partial": 60,
+    "leaked": 1174,
+    "recall": 0.5602,
+    "recall_any": 0.5816
+   },
+   "et": {
+    "spans": 1491,
+    "redacted": 656,
+    "blocked": 0,
+    "partial": 87,
+    "leaked": 748,
+    "recall": 0.44,
+    "recall_any": 0.4983
+   },
+   "fi": {
+    "spans": 1488,
+    "redacted": 786,
+    "blocked": 0,
+    "partial": 46,
+    "leaked": 656,
+    "recall": 0.5282,
+    "recall_any": 0.5591
+   },
+   "fr": {
+    "spans": 4272,
+    "redacted": 2318,
+    "blocked": 0,
+    "partial": 88,
+    "leaked": 1866,
+    "recall": 0.5426,
+    "recall_any": 0.5632
+   },
+   "hr": {
+    "spans": 1406,
+    "redacted": 705,
+    "blocked": 0,
+    "partial": 100,
+    "leaked": 601,
+    "recall": 0.5014,
+    "recall_any": 0.5725
+   },
+   "hu": {
+    "spans": 1330,
+    "redacted": 579,
+    "blocked": 0,
+    "partial": 97,
+    "leaked": 654,
+    "recall": 0.4353,
+    "recall_any": 0.5083
+   },
+   "id": {
+    "spans": 911,
+    "redacted": 437,
+    "blocked": 0,
+    "partial": 42,
+    "leaked": 432,
+    "recall": 0.4797,
+    "recall_any": 0.5258
+   },
+   "it": {
+    "spans": 2966,
+    "redacted": 1430,
+    "blocked": 0,
+    "partial": 103,
+    "leaked": 1433,
+    "recall": 0.4821,
+    "recall_any": 0.5169
+   },
+   "ja": {
+    "spans": 832,
+    "redacted": 130,
+    "blocked": 0,
+    "partial": 10,
+    "leaked": 692,
+    "recall": 0.1562,
+    "recall_any": 0.1683
+   },
+   "ko": {
+    "spans": 771,
+    "redacted": 141,
+    "blocked": 0,
+    "partial": 5,
+    "leaked": 625,
+    "recall": 0.1829,
+    "recall_any": 0.1894
+   },
+   "lt": {
+    "spans": 1420,
+    "redacted": 719,
+    "blocked": 0,
+    "partial": 94,
+    "leaked": 607,
+    "recall": 0.5063,
+    "recall_any": 0.5725
+   },
+   "lv": {
+    "spans": 1433,
+    "redacted": 677,
+    "blocked": 0,
+    "partial": 109,
+    "leaked": 647,
+    "recall": 0.4724,
+    "recall_any": 0.5485
+   },
+   "ms": {
+    "spans": 834,
+    "redacted": 371,
+    "blocked": 0,
+    "partial": 47,
+    "leaked": 416,
+    "recall": 0.4448,
+    "recall_any": 0.5012
+   },
+   "nl": {
+    "spans": 1477,
+    "redacted": 937,
+    "blocked": 0,
+    "partial": 27,
+    "leaked": 513,
+    "recall": 0.6344,
+    "recall_any": 0.6527
+   },
+   "pl": {
+    "spans": 1475,
+    "redacted": 781,
+    "blocked": 0,
+    "partial": 46,
+    "leaked": 648,
+    "recall": 0.5295,
+    "recall_any": 0.5607
+   },
+   "pt": {
+    "spans": 1417,
+    "redacted": 715,
+    "blocked": 0,
+    "partial": 31,
+    "leaked": 671,
+    "recall": 0.5046,
+    "recall_any": 0.5265
+   },
+   "ro": {
+    "spans": 1395,
+    "redacted": 700,
+    "blocked": 0,
+    "partial": 51,
+    "leaked": 644,
+    "recall": 0.5018,
+    "recall_any": 0.5384
+   },
+   "sk": {
+    "spans": 1428,
+    "redacted": 699,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 689,
+    "recall": 0.4895,
+    "recall_any": 0.5175
+   },
+   "sl": {
+    "spans": 1431,
+    "redacted": 628,
+    "blocked": 0,
+    "partial": 115,
+    "leaked": 688,
+    "recall": 0.4389,
+    "recall_any": 0.5192
+   },
+   "sr": {
+    "spans": 1353,
+    "redacted": 707,
+    "blocked": 0,
+    "partial": 46,
+    "leaked": 600,
+    "recall": 0.5225,
+    "recall_any": 0.5565
+   },
+   "sv": {
+    "spans": 1312,
+    "redacted": 634,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 638,
+    "recall": 0.4832,
+    "recall_any": 0.5137
+   },
+   "tl": {
+    "spans": 885,
+    "redacted": 501,
+    "blocked": 0,
+    "partial": 28,
+    "leaked": 356,
+    "recall": 0.5661,
+    "recall_any": 0.5977
+   },
+   "vi": {
+    "spans": 885,
+    "redacted": 397,
+    "blocked": 0,
+    "partial": 61,
+    "leaked": 427,
+    "recall": 0.4486,
+    "recall_any": 0.5175
+   },
+   "zh": {
+    "spans": 710,
+    "redacted": 150,
+    "blocked": 0,
+    "partial": 11,
+    "leaked": 549,
+    "recall": 0.2113,
+    "recall_any": 0.2268
+   }
+  },
+  "by_half": {
+   "dev": {
+    "spans": 26070,
+    "redacted": 13086,
+    "blocked": 0,
+    "partial": 951,
+    "leaked": 12033,
+    "recall": 0.502,
+    "recall_any": 0.5384
+   },
+   "holdout": {
+    "spans": 25883,
+    "redacted": 12979,
+    "blocked": 0,
+    "partial": 985,
+    "leaked": 11919,
+    "recall": 0.5014,
+    "recall_any": 0.5395
+   }
+  },
+  "collateral": {
+   "chars_outside_gold": 2047459,
+   "redacted_outside_gold": 271049,
+   "rate": 0.1324,
+   "by_type": {
+    "PERSON": 172382,
+    "ORGANIZATION": 63036,
+    "LOCATION": 32868,
+    "EMAIL": 2412,
+    "ADDRESS": 271,
+    "PHONE": 35,
+    "DEVICE_ID": 13,
+    "ACCOUNT_ID": 10,
+    "UK_NINO": 9,
+    "ID_DOCUMENT": 7,
+    "CREDIT_CARD": 4,
+    "NATIONAL_ID": 2
+   }
+  },
+  "latency_ms": {
+   "p50": 9.15,
+   "p95": 23.4,
+   "p99": 30.49,
+   "max": 54.64,
+   "mean_chars": 334
+  }
+ }
+}
