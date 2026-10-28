@@ -1,0 +1,60 @@
+{
+ "benchmark": "PIIMB, the PII Masking Benchmark (piimb 0.3.0)",
+ "benchmark_repository": "https://huggingface.co/datasets/piimb/pii-masking-benchmark",
+ "benchmark_commit_checked": "7d797b9fc8dc1942cef60fbe532e7d1a0e31b655",
+ "results_repository": "https://huggingface.co/datasets/piimb/pii-masking-benchmark-results",
+ "results_commit_checked": "e0a5b75aa26adcf2476617b0a2b415b098ea64b9",
+ "leaderboard": "https://huggingface.co/spaces/piimb/pii-masking-benchmark-leaderboard (commit c7d1e80)",
+ "metric": "masking F2: character-level, label-agnostic, spans merged per text when they overlap or touch, pooled over the task's texts (micro), beta = 2; ranking by F2 per task and Avg F2 per leaderboard",
+ "subset": "sentences (data/test_sentences.jsonl), the subset every leaderboard row is scored on",
+ "status": "CANNOT VERIFY",
+ "native_run": "not run: the scorer (src/piimb/metrics.py) and the sampled tasks (data/test_sentences.jsonl) exist only in the Hugging Face repository above, which this workspace cannot download; the samples (5,000 random documents per task, no published seed) cannot be rebuilt from the local files",
+ "to_run_it": "piimb_harpo.py official --piimb-repo <checkout at 7d797b9> --tasks ... (see commands.txt)",
+ "tasks": [
+  "nemotron-pii"
+ ],
+ "harpo_native_score": null,
+ "current_public_best": {
+  "nemotron-pii": {
+   "model": "OpenMed/OpenMed-PII-SuperClinical-Small-44M-v1",
+   "f2": 0.97166
+  },
+  "english_avg_f2": {
+   "model": "OpenMed/privacy-filter-multilingual-v2",
+   "avg_f2": 0.918
+  }
+ },
+ "indication_not_native": {
+  "what": "PIIMB's masking metric re-implemented from its published definition, on the local file: other samples, whole documents instead of PIIMB's sentences. Not comparable with the leaderboard; it says where Harpo stands, not its PIIMB score.",
+  "file": "test-00000-of-00001.parquet",
+  "documents": 100000,
+  "blocked_texts": 0,
+  "masking_metrics": {
+   "precision": 0.8099120965633466,
+   "recall": 0.5665860829762218,
+   "f1": 0.6667425052467281,
+   "f2": 0.6028069553473483,
+   "fpr": 0.019509153461073753,
+   "true_chars": 12263441,
+   "pred_chars": 8579073,
+   "intersection_chars": 6948295,
+   "text_chars": 95853844
+  },
+  "predictions_sha256": "07daa370613da06279d143b19ea7387042ca3537e5c73cfddd26f9bfb38cc830",
+  "harpo": {
+   "version": "2.4.0",
+   "package_sha256": "81600d74853bdedaf4e666eb59d66bd0ec7317b046f179e09d547b67732bdd91",
+   "python": "3.12.13",
+   "models": {
+    "en_core_web_sm": "3.8.0",
+    "de_core_news_sm": "3.8.0",
+    "xx_ent_wiki_sm": "3.8.0",
+    "spacy": "3.8.16"
+   },
+   "cpus": 2
+  },
+  "configuration": "default-image (bench/external/harness.py pipeline_for)",
+  "adapter": "piimb_harpo.py indicative",
+  "adapter_sha256": "ad68c98aa44aadad68b38684ccdd92b184fd181ada6a6a89bb74d512e44c939a"
+ }
+}

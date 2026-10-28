@@ -1,0 +1,1214 @@
+{
+ "config": "default-image",
+ "split": null,
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "e00f4dddcd51d4fe625007f57d6ac2a037a6b3c8d914fa430392ad87fc749c27",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "seconds": 35.5,
+ "corpus_documents": 2480,
+ "metrics": {
+  "documents": 2480,
+  "all": {
+   "values": 14764,
+   "removed": 11878,
+   "partial": 309,
+   "leaked": 2577,
+   "rate": 0.8045
+  },
+  "by_region": {
+   "eu": {
+    "values": 2756,
+    "removed": 2330,
+    "partial": 31,
+    "leaked": 395,
+    "rate": 0.8454
+   },
+   "nl": {
+    "values": 6556,
+    "removed": 4903,
+    "partial": 233,
+    "leaked": 1420,
+    "rate": 0.7479
+   },
+   "us": {
+    "values": 5452,
+    "removed": 4645,
+    "partial": 45,
+    "leaked": 762,
+    "rate": 0.852
+   }
+  },
+  "by_split": {
+   "dev": {
+    "values": 10084,
+    "removed": 8091,
+    "partial": 201,
+    "leaked": 1792,
+    "rate": 0.8024
+   },
+   "holdout": {
+    "values": 4680,
+    "removed": 3787,
+    "partial": 108,
+    "leaked": 785,
+    "rate": 0.8092
+   }
+  },
+  "by_region_split": {
+   "eu dev": {
+    "values": 1636,
+    "removed": 1441,
+    "partial": 14,
+    "leaked": 181,
+    "rate": 0.8808
+   },
+   "eu holdout": {
+    "values": 1120,
+    "removed": 889,
+    "partial": 17,
+    "leaked": 214,
+    "rate": 0.7937
+   },
+   "nl dev": {
+    "values": 4796,
+    "removed": 3509,
+    "partial": 162,
+    "leaked": 1125,
+    "rate": 0.7317
+   },
+   "nl holdout": {
+    "values": 1760,
+    "removed": 1394,
+    "partial": 71,
+    "leaked": 295,
+    "rate": 0.792
+   },
+   "us dev": {
+    "values": 3652,
+    "removed": 3141,
+    "partial": 25,
+    "leaked": 486,
+    "rate": 0.8601
+   },
+   "us holdout": {
+    "values": 1800,
+    "removed": 1504,
+    "partial": 20,
+    "leaked": 276,
+    "rate": 0.8356
+   }
+  },
+  "by_kind": {
+   "eu.bic": {
+    "values": 80,
+    "removed": 30,
+    "partial": 0,
+    "leaked": 50,
+    "rate": 0.375
+   },
+   "eu.ehic": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "eu.eori": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "eu.iban": {
+    "values": 278,
+    "removed": 278,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "eu.mrz": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "eu.name": {
+    "values": 600,
+    "removed": 498,
+    "partial": 12,
+    "leaked": 90,
+    "rate": 0.83
+   },
+   "eu.national": {
+    "values": 360,
+    "removed": 341,
+    "partial": 0,
+    "leaked": 19,
+    "rate": 0.9472
+   },
+   "eu.phone": {
+    "values": 240,
+    "removed": 240,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "eu.plate": {
+    "values": 40,
+    "removed": 11,
+    "partial": 3,
+    "leaked": 26,
+    "rate": 0.275
+   },
+   "eu.postcode_city": {
+    "values": 320,
+    "removed": 310,
+    "partial": 3,
+    "leaked": 7,
+    "rate": 0.9688
+   },
+   "eu.street": {
+    "values": 320,
+    "removed": 304,
+    "partial": 4,
+    "leaked": 12,
+    "rate": 0.95
+   },
+   "eu.uvci": {
+    "values": 40,
+    "removed": 0,
+    "partial": 9,
+    "leaked": 31,
+    "rate": 0.0
+   },
+   "eu.vat": {
+    "values": 318,
+    "removed": 278,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.8742
+   },
+   "nl.a_nummer": {
+    "values": 40,
+    "removed": 16,
+    "partial": 0,
+    "leaked": 24,
+    "rate": 0.4
+   },
+   "nl.agb": {
+    "values": 80,
+    "removed": 45,
+    "partial": 0,
+    "leaked": 35,
+    "rate": 0.5625
+   },
+   "nl.big": {
+    "values": 40,
+    "removed": 3,
+    "partial": 0,
+    "leaked": 37,
+    "rate": 0.075
+   },
+   "nl.bsn": {
+    "values": 463,
+    "removed": 463,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.btw": {
+    "values": 80,
+    "removed": 52,
+    "partial": 5,
+    "leaked": 23,
+    "rate": 0.65
+   },
+   "nl.city": {
+    "values": 328,
+    "removed": 145,
+    "partial": 3,
+    "leaked": 180,
+    "rate": 0.4421
+   },
+   "nl.dob": {
+    "values": 360,
+    "removed": 280,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.7778
+   },
+   "nl.document": {
+    "values": 80,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.5
+   },
+   "nl.dossiernummer": {
+    "values": 40,
+    "removed": 25,
+    "partial": 0,
+    "leaked": 15,
+    "rate": 0.625
+   },
+   "nl.email": {
+    "values": 288,
+    "removed": 288,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.first_name": {
+    "values": 80,
+    "removed": 65,
+    "partial": 0,
+    "leaked": 15,
+    "rate": 0.8125
+   },
+   "nl.house_number": {
+    "values": 168,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 168,
+    "rate": 0.0
+   },
+   "nl.iban": {
+    "values": 591,
+    "removed": 591,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.kenteken": {
+    "values": 120,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 120,
+    "rate": 0.0
+   },
+   "nl.klantnummer": {
+    "values": 143,
+    "removed": 143,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.kvk": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "nl.loonheffingennummer": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "nl.name": {
+    "values": 1168,
+    "removed": 1062,
+    "partial": 45,
+    "leaked": 61,
+    "rate": 0.9092
+   },
+   "nl.onderwijsnummer": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "nl.ov_chipkaart": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.parketnummer": {
+    "values": 40,
+    "removed": 10,
+    "partial": 2,
+    "leaked": 28,
+    "rate": 0.25
+   },
+   "nl.patientnummer": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.personeelsnummer": {
+    "values": 80,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.5
+   },
+   "nl.phone": {
+    "values": 671,
+    "removed": 659,
+    "partial": 0,
+    "leaked": 12,
+    "rate": 0.9821
+   },
+   "nl.polisnummer": {
+    "values": 80,
+    "removed": 80,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.postcode": {
+    "values": 248,
+    "removed": 92,
+    "partial": 72,
+    "leaked": 84,
+    "rate": 0.371
+   },
+   "nl.postcode_city": {
+    "values": 280,
+    "removed": 262,
+    "partial": 13,
+    "leaked": 5,
+    "rate": 0.9357
+   },
+   "nl.rijbewijs": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "nl.street": {
+    "values": 440,
+    "removed": 323,
+    "partial": 92,
+    "leaked": 25,
+    "rate": 0.7341
+   },
+   "nl.street_name": {
+    "values": 168,
+    "removed": 28,
+    "partial": 1,
+    "leaked": 139,
+    "rate": 0.1667
+   },
+   "nl.uzi": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "nl.v_nummer": {
+    "values": 40,
+    "removed": 19,
+    "partial": 0,
+    "leaked": 21,
+    "rate": 0.475
+   },
+   "nl.vestigingsnummer": {
+    "values": 40,
+    "removed": 12,
+    "partial": 0,
+    "leaked": 28,
+    "rate": 0.3
+   },
+   "nl.vin": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.a_number": {
+    "values": 40,
+    "removed": 0,
+    "partial": 1,
+    "leaked": 39,
+    "rate": 0.0
+   },
+   "us.atin": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.bank_account": {
+    "values": 120,
+    "removed": 120,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.city": {
+    "values": 151,
+    "removed": 121,
+    "partial": 0,
+    "leaked": 30,
+    "rate": 0.8013
+   },
+   "us.city_state": {
+    "values": 200,
+    "removed": 200,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.credit_card": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.cvv": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "us.dea": {
+    "values": 80,
+    "removed": 80,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.dob": {
+    "values": 320,
+    "removed": 320,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.dod_id": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.driver_license": {
+    "values": 120,
+    "removed": 120,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.ein": {
+    "values": 20,
+    "removed": 20,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.email": {
+    "values": 296,
+    "removed": 296,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.employee_id": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "us.first_name": {
+    "values": 151,
+    "removed": 151,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.group_number": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "us.i94": {
+    "values": 40,
+    "removed": 4,
+    "partial": 0,
+    "leaked": 36,
+    "rate": 0.1
+   },
+   "us.ip": {
+    "values": 105,
+    "removed": 105,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.itin": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.ktn": {
+    "values": 40,
+    "removed": 2,
+    "partial": 0,
+    "leaked": 38,
+    "rate": 0.05
+   },
+   "us.last_name": {
+    "values": 111,
+    "removed": 111,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.mbi": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "us.medicaid": {
+    "values": 40,
+    "removed": 4,
+    "partial": 0,
+    "leaked": 36,
+    "rate": 0.1
+   },
+   "us.member_id": {
+    "values": 80,
+    "removed": 80,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.name": {
+    "values": 880,
+    "removed": 839,
+    "partial": 26,
+    "leaked": 15,
+    "rate": 0.9534
+   },
+   "us.npi": {
+    "values": 80,
+    "removed": 80,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.passport": {
+    "values": 80,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.5
+   },
+   "us.passport_card": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "us.phone": {
+    "values": 616,
+    "removed": 616,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.plate": {
+    "values": 80,
+    "removed": 40,
+    "partial": 3,
+    "leaked": 37,
+    "rate": 0.5
+   },
+   "us.ptin": {
+    "values": 40,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.0
+   },
+   "us.routing": {
+    "values": 120,
+    "removed": 120,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.rx": {
+    "values": 80,
+    "removed": 0,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.0
+   },
+   "us.ssn": {
+    "values": 180,
+    "removed": 180,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.ssn_last4": {
+    "values": 80,
+    "removed": 58,
+    "partial": 0,
+    "leaked": 22,
+    "rate": 0.725
+   },
+   "us.street": {
+    "values": 351,
+    "removed": 342,
+    "partial": 9,
+    "leaked": 0,
+    "rate": 0.9744
+   },
+   "us.student_id": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.uscis_receipt": {
+    "values": 40,
+    "removed": 4,
+    "partial": 6,
+    "leaked": 30,
+    "rate": 0.1
+   },
+   "us.va_file": {
+    "values": 40,
+    "removed": 1,
+    "partial": 0,
+    "leaked": 39,
+    "rate": 0.025
+   },
+   "us.vin": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   },
+   "us.zip": {
+    "values": 351,
+    "removed": 351,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0
+   }
+  },
+  "by_template": {
+   "eu.at_meldezettel": {
+    "values": 160,
+    "removed": 160,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "holdout"
+   },
+   "eu.bank_details_mail": {
+    "values": 240,
+    "removed": 169,
+    "partial": 2,
+    "leaked": 69,
+    "rate": 0.7042,
+    "split": "holdout"
+   },
+   "eu.be_huurcontract": {
+    "values": 200,
+    "removed": 182,
+    "partial": 0,
+    "leaked": 18,
+    "rate": 0.91,
+    "split": "holdout"
+   },
+   "eu.cee_records_json": {
+    "values": 160,
+    "removed": 78,
+    "partial": 0,
+    "leaked": 82,
+    "rate": 0.4875,
+    "split": "holdout"
+   },
+   "eu.customs_eori": {
+    "values": 120,
+    "removed": 68,
+    "partial": 1,
+    "leaked": 51,
+    "rate": 0.5667,
+    "split": "dev"
+   },
+   "eu.es_contrato": {
+    "values": 200,
+    "removed": 200,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "eu.fr_salarie": {
+    "values": 200,
+    "removed": 200,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "eu.it_ricevuta": {
+    "values": 200,
+    "removed": 178,
+    "partial": 0,
+    "leaked": 22,
+    "rate": 0.89,
+    "split": "dev"
+   },
+   "eu.kennzeichen": {
+    "values": 80,
+    "removed": 42,
+    "partial": 4,
+    "leaked": 34,
+    "rate": 0.525,
+    "split": "dev"
+   },
+   "eu.nordic_hr": {
+    "values": 120,
+    "removed": 120,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "holdout"
+   },
+   "eu.passport_scan": {
+    "values": 40,
+    "removed": 40,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "eu.pl_wniosek": {
+    "values": 200,
+    "removed": 200,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "eu.pt_fatura": {
+    "values": 160,
+    "removed": 140,
+    "partial": 6,
+    "leaked": 14,
+    "rate": 0.875,
+    "split": "holdout"
+   },
+   "eu.rechnung_de": {
+    "values": 240,
+    "removed": 201,
+    "partial": 7,
+    "leaked": 32,
+    "rate": 0.8375,
+    "split": "dev"
+   },
+   "eu.supplier_table": {
+    "values": 236,
+    "removed": 236,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "eu.travel_ehic": {
+    "values": 120,
+    "removed": 76,
+    "partial": 2,
+    "leaked": 42,
+    "rate": 0.6333,
+    "split": "dev"
+   },
+   "eu.vaccination": {
+    "values": 80,
+    "removed": 40,
+    "partial": 9,
+    "leaked": 31,
+    "rate": 0.5,
+    "split": "holdout"
+   },
+   "nl.aangifte": {
+    "values": 320,
+    "removed": 231,
+    "partial": 14,
+    "leaked": 75,
+    "rate": 0.7219,
+    "split": "dev"
+   },
+   "nl.autoverkoop": {
+    "values": 160,
+    "removed": 116,
+    "partial": 0,
+    "leaked": 44,
+    "rate": 0.725,
+    "split": "holdout"
+   },
+   "nl.belastingdienst": {
+    "values": 200,
+    "removed": 185,
+    "partial": 15,
+    "leaked": 0,
+    "rate": 0.925,
+    "split": "holdout"
+   },
+   "nl.cbr_rijbewijs": {
+    "values": 120,
+    "removed": 106,
+    "partial": 10,
+    "leaked": 4,
+    "rate": 0.8833,
+    "split": "dev"
+   },
+   "nl.crm_json": {
+    "values": 440,
+    "removed": 287,
+    "partial": 31,
+    "leaked": 122,
+    "rate": 0.6523,
+    "split": "dev"
+   },
+   "nl.gemeente_brief": {
+    "values": 280,
+    "removed": 239,
+    "partial": 0,
+    "leaked": 41,
+    "rate": 0.8536,
+    "split": "dev"
+   },
+   "nl.huurformulier": {
+    "values": 320,
+    "removed": 288,
+    "partial": 18,
+    "leaked": 14,
+    "rate": 0.9,
+    "split": "dev"
+   },
+   "nl.ind_brief": {
+    "values": 160,
+    "removed": 75,
+    "partial": 0,
+    "leaked": 85,
+    "rate": 0.4688,
+    "split": "dev"
+   },
+   "nl.inkomensverklaring_md": {
+    "values": 160,
+    "removed": 118,
+    "partial": 1,
+    "leaked": 41,
+    "rate": 0.7375,
+    "split": "holdout"
+   },
+   "nl.kvk_uittreksel": {
+    "values": 240,
+    "removed": 141,
+    "partial": 16,
+    "leaked": 83,
+    "rate": 0.5875,
+    "split": "holdout"
+   },
+   "nl.ledenlijst_csv": {
+    "values": 1024,
+    "removed": 537,
+    "partial": 20,
+    "leaked": 467,
+    "rate": 0.5244,
+    "split": "dev"
+   },
+   "nl.loonstrook": {
+    "values": 200,
+    "removed": 117,
+    "partial": 1,
+    "leaked": 82,
+    "rate": 0.585,
+    "split": "dev"
+   },
+   "nl.ov_klacht": {
+    "values": 120,
+    "removed": 119,
+    "partial": 0,
+    "leaked": 1,
+    "rate": 0.9917,
+    "split": "dev"
+   },
+   "nl.school_aanmelding": {
+    "values": 240,
+    "removed": 180,
+    "partial": 3,
+    "leaked": 57,
+    "rate": 0.75,
+    "split": "dev"
+   },
+   "nl.sportclub_yaml": {
+    "values": 320,
+    "removed": 273,
+    "partial": 26,
+    "leaked": 21,
+    "rate": 0.8531,
+    "split": "holdout"
+   },
+   "nl.systeemlog": {
+    "values": 412,
+    "removed": 412,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "nl.teams_bericht": {
+    "values": 160,
+    "removed": 144,
+    "partial": 0,
+    "leaked": 16,
+    "rate": 0.9,
+    "split": "holdout"
+   },
+   "nl.verhuisbericht": {
+    "values": 240,
+    "removed": 212,
+    "partial": 11,
+    "leaked": 17,
+    "rate": 0.8833,
+    "split": "holdout"
+   },
+   "nl.verwijsbrief": {
+    "values": 280,
+    "removed": 205,
+    "partial": 2,
+    "leaked": 73,
+    "rate": 0.7321,
+    "split": "holdout"
+   },
+   "nl.whatsapp": {
+    "values": 200,
+    "removed": 181,
+    "partial": 6,
+    "leaked": 13,
+    "rate": 0.905,
+    "split": "dev"
+   },
+   "nl.ziekenhuisbrief": {
+    "values": 280,
+    "removed": 196,
+    "partial": 4,
+    "leaked": 80,
+    "rate": 0.7,
+    "split": "dev"
+   },
+   "nl.zorgverzekeraar_mail": {
+    "values": 440,
+    "removed": 381,
+    "partial": 40,
+    "leaked": 19,
+    "rate": 0.8659,
+    "split": "dev"
+   },
+   "nl.zzp_factuur": {
+    "values": 240,
+    "removed": 160,
+    "partial": 15,
+    "leaked": 65,
+    "rate": 0.6667,
+    "split": "dev"
+   },
+   "us.app_log": {
+    "values": 315,
+    "removed": 315,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "us.chat_support": {
+    "values": 160,
+    "removed": 120,
+    "partial": 0,
+    "leaked": 40,
+    "rate": 0.75,
+    "split": "dev"
+   },
+   "us.claim_letter": {
+    "values": 440,
+    "removed": 352,
+    "partial": 5,
+    "leaked": 83,
+    "rate": 0.8,
+    "split": "holdout"
+   },
+   "us.customers_csv": {
+    "values": 777,
+    "removed": 777,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   },
+   "us.dmv_record": {
+    "values": 280,
+    "removed": 275,
+    "partial": 5,
+    "leaked": 0,
+    "rate": 0.9821,
+    "split": "dev"
+   },
+   "us.hr_json": {
+    "values": 400,
+    "removed": 316,
+    "partial": 5,
+    "leaked": 79,
+    "rate": 0.79,
+    "split": "dev"
+   },
+   "us.military_va": {
+    "values": 160,
+    "removed": 118,
+    "partial": 2,
+    "leaked": 40,
+    "rate": 0.7375,
+    "split": "dev"
+   },
+   "us.mortgage_md": {
+    "values": 240,
+    "removed": 240,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "holdout"
+   },
+   "us.patient_intake": {
+    "values": 520,
+    "removed": 440,
+    "partial": 0,
+    "leaked": 80,
+    "rate": 0.8462,
+    "split": "dev"
+   },
+   "us.pharmacy_chat": {
+    "values": 240,
+    "removed": 160,
+    "partial": 4,
+    "leaked": 76,
+    "rate": 0.6667,
+    "split": "holdout"
+   },
+   "us.pharmacy_label": {
+    "values": 280,
+    "removed": 236,
+    "partial": 4,
+    "leaked": 40,
+    "rate": 0.8429,
+    "split": "dev"
+   },
+   "us.police_report": {
+    "values": 200,
+    "removed": 158,
+    "partial": 4,
+    "leaked": 38,
+    "rate": 0.79,
+    "split": "holdout"
+   },
+   "us.school_enrollment": {
+    "values": 320,
+    "removed": 312,
+    "partial": 7,
+    "leaked": 1,
+    "rate": 0.975,
+    "split": "holdout"
+   },
+   "us.ssn_masked_letter": {
+    "values": 80,
+    "removed": 58,
+    "partial": 0,
+    "leaked": 22,
+    "rate": 0.725,
+    "split": "dev"
+   },
+   "us.travel_profile": {
+    "values": 200,
+    "removed": 122,
+    "partial": 0,
+    "leaked": 78,
+    "rate": 0.61,
+    "split": "holdout"
+   },
+   "us.uscis_notice": {
+    "values": 240,
+    "removed": 88,
+    "partial": 7,
+    "leaked": 145,
+    "rate": 0.3667,
+    "split": "dev"
+   },
+   "us.voicemail": {
+    "values": 160,
+    "removed": 160,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "holdout"
+   },
+   "us.w9": {
+    "values": 240,
+    "removed": 198,
+    "partial": 2,
+    "leaked": 40,
+    "rate": 0.825,
+    "split": "dev"
+   },
+   "us.wire_email": {
+    "values": 200,
+    "removed": 200,
+    "partial": 0,
+    "leaked": 0,
+    "rate": 1.0,
+    "split": "dev"
+   }
+  },
+  "keeps": {
+   "keeps": 4353,
+   "redacted": 793,
+   "false_positive_rate": 0.1822,
+   "by_region": {
+    "eu": 0.259,
+    "nl": 0.1698,
+    "us": 0.1447
+   }
+  },
+  "blocked_documents": 0
+ }
+}

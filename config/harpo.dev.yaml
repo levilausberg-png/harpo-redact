@@ -1,0 +1,39 @@
+# Local development and demos. Auth is off and the upstream is the mock
+# provider, which echoes what it receives. Never expose this instance.
+environment: development
+
+server:
+  host: 127.0.0.1
+  port: 8080
+  allowed_hosts: ["127.0.0.1", "localhost"]
+
+auth:
+  enabled: false
+
+policy:
+  live_file: policy.live.yaml  # the console's Policy page saves here (git-ignored)
+  default_mode: relational
+  # Public names that should stay readable.
+  allow_terms: [Python, JavaScript, TypeScript, Docker, Kubernetes, GitHub, AWS, Azure, Linux, PostgreSQL,
+                OpenAI, Anthropic, Gemini, Slack]
+
+detection:
+  registry:
+    terms: ["Project Bluefin"]
+    patterns: ['\bINC-\d{6}\b']
+
+upstreams:
+  - name: mock
+    style: openai
+    base_url: http://127.0.0.1:9100/v1
+    models: [mock-provider]
+  - name: mock-anthropic
+    style: anthropic
+    base_url: http://127.0.0.1:9100
+    models: [mock-claude]
+
+logging:
+  level: INFO
+
+documents:
+  in_chat: true

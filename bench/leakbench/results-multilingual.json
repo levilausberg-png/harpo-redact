@@ -1,0 +1,227 @@
+{
+ "config": "multilingual",
+ "corpus": {
+  "cases": 1350,
+  "secrets": 1280,
+  "trap_cases": 70,
+  "keep_phrases": 2770,
+  "sha256": "71da51a13d5855db"
+ },
+ "raw_identifier_escapes": 29,
+ "recall": 0.9773,
+ "false_positive_rate": 0.0014,
+ "false_block_rate": 0.0,
+ "by_category": {
+  "bsn": {
+   "secrets": 120,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "card": {
+   "secrets": 180,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "email": {
+   "secrets": 260,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "iban": {
+   "secrets": 140,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "name": {
+   "secrets": 120,
+   "escapes": 29,
+   "recall": 0.7583
+  },
+  "phone": {
+   "secrets": 160,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "secret": {
+   "secrets": 140,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "seed_phrase": {
+   "secrets": 60,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "ssn": {
+   "secrets": 100,
+   "escapes": 0,
+   "recall": 1.0
+  }
+ },
+ "by_attack": {
+  "base64": {
+   "secrets": 160,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "base64url": {
+   "secrets": 40,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "base64x2": {
+   "secrets": 60,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "bidi": {
+   "secrets": 100,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "fullwidth": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "homoglyph": {
+   "secrets": 40,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "html_entity": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "json_escape": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "leetspeak": {
+   "secrets": 40,
+   "escapes": 20,
+   "recall": 0.5
+  },
+  "lowercase": {
+   "secrets": 40,
+   "escapes": 8,
+   "recall": 0.8
+  },
+  "plain": {
+   "secrets": 180,
+   "escapes": 1,
+   "recall": 0.9944
+  },
+  "spaced": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "spelled_out": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "split_lines": {
+   "secrets": 80,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "spoken": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "uppercase": {
+   "secrets": 60,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "url_encoded": {
+   "secrets": 20,
+   "escapes": 0,
+   "recall": 1.0
+  },
+  "zero_width": {
+   "secrets": 160,
+   "escapes": 0,
+   "recall": 1.0
+  }
+ },
+ "by_language": {
+  "de": {
+   "secrets": 256,
+   "escapes": 4,
+   "recall": 0.9844
+  },
+  "en": {
+   "secrets": 256,
+   "escapes": 7,
+   "recall": 0.9727
+  },
+  "es": {
+   "secrets": 256,
+   "escapes": 6,
+   "recall": 0.9766
+  },
+  "fr": {
+   "secrets": 256,
+   "escapes": 4,
+   "recall": 0.9844
+  },
+  "nl": {
+   "secrets": 256,
+   "escapes": 8,
+   "recall": 0.9688
+  }
+ },
+ "latency_ms": {
+  "p50": 9.53,
+  "p95": 15.27,
+  "p99": 27.36,
+  "mean": 10.45
+ },
+ "throughput_cases_per_s": 95.5,
+ "cpu_s": 13.92,
+ "max_rss_mb": 419.3,
+ "escapes": [
+  "name-plain-es-3",
+  "name-lowercase-en-1",
+  "name-lowercase-en-2",
+  "name-lowercase-en-3",
+  "name-lowercase-nl-0",
+  "name-lowercase-nl-1",
+  "name-lowercase-nl-2",
+  "name-lowercase-nl-3",
+  "name-lowercase-es-0",
+  "name-leetspeak-en-0",
+  "name-leetspeak-en-1",
+  "name-leetspeak-en-2",
+  "name-leetspeak-en-3",
+  "name-leetspeak-nl-0",
+  "name-leetspeak-nl-1",
+  "name-leetspeak-nl-2",
+  "name-leetspeak-nl-3",
+  "name-leetspeak-de-0",
+  "name-leetspeak-de-1",
+  "name-leetspeak-de-2",
+  "name-leetspeak-de-3",
+  "name-leetspeak-fr-0",
+  "name-leetspeak-fr-1",
+  "name-leetspeak-fr-2",
+  "name-leetspeak-fr-3",
+  "name-leetspeak-es-0",
+  "name-leetspeak-es-1",
+  "name-leetspeak-es-2",
+  "name-leetspeak-es-3"
+ ],
+ "false_positives": [
+  "trap-11-en: the Paris agreement",
+  "trap-11-de: the Paris agreement",
+  "trap-11-fr: the Paris agreement",
+  "trap-11-es: the Paris agreement"
+ ],
+ "false_blocks": []
+}

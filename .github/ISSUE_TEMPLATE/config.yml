@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: A value reached a provider (security)
+    url: https://github.com/levilausberg-png/harpo-redact/security/advisories/new
+    about: Leaks are security issues. Report them privately, never in a public issue.
+  - name: Questions and ideas
+    url: https://github.com/levilausberg-png/harpo-redact/discussions
+    about: Ask and share in Discussions.

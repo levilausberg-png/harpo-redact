@@ -1,0 +1,22 @@
+# Local state from the boot scripts: pid files, logs, the gateway key and provider keys. Never commit it.
+.harpo/
+.privateai/
+.venv/
+config/harpo.yaml
+config/gateway.yaml
+# (.privateai/ and config/gateway.yaml are where versions before the rename kept them)
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+node_modules/
+# Live policy saved by the console's Policy page
+policy.live.yaml
+# External benchmark data and --details files hold dataset text (bench/external/README.md). Keep them out.
+bench/external/data/
+bench/external/details/

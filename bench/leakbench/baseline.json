@@ -1,0 +1,34 @@
+{
+ "deterministic": {
+  "raw_identifier_escapes": 116,
+  "false_positive_rate": 0.0,
+  "escapes_by_category": {
+   "bsn": 0,
+   "card": 0,
+   "email": 0,
+   "iban": 0,
+   "name": 116,
+   "phone": 0,
+   "secret": 0,
+   "seed_phrase": 0,
+   "ssn": 0
+  },
+  "corpus_sha256": "71da51a13d5855db"
+ },
+ "multilingual": {
+  "raw_identifier_escapes": 29,
+  "false_positive_rate": 0.0025,
+  "escapes_by_category": {
+   "bsn": 0,
+   "card": 0,
+   "email": 0,
+   "iban": 0,
+   "name": 29,
+   "phone": 0,
+   "secret": 0,
+   "seed_phrase": 0,
+   "ssn": 0
+  },
+  "corpus_sha256": "71da51a13d5855db"
+ }
+}

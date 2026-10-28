@@ -1,0 +1,977 @@
+{
+ "dataset": "nemotron",
+ "file": "test-00000-of-00001.parquet",
+ "file_sha256": "1a4b0512ecb5370f0992d29d0f9c07351e6de13f0d7ea33bb18cecb984780247",
+ "documents": 100000,
+ "limit": null,
+ "half": null,
+ "config": "default-image",
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "81600d74853bdedaf4e666eb59d66bd0ec7317b046f179e09d547b67732bdd91",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "scope_sha256": "e4f5161128b412a86f101dbc0bf94be72fd2dd9fa21226712188c2a13b625ddf",
+ "harness_sha256": "ce86f04686e61419889878400d85887a71aca1df6c2dcb3d401d8f6970939f9e",
+ "started": "2026-10-20T19:03:10+00:00",
+ "seconds": 1731.2,
+ "metrics": {
+  "documents": 100000,
+  "in_scope": {
+   "spans": 524291,
+   "redacted": 497009,
+   "blocked": 0,
+   "partial": 2663,
+   "leaked": 24619,
+   "recall": 0.948,
+   "recall_any": 0.953
+  },
+  "all_labels": {
+   "spans": 849362,
+   "redacted": 541359,
+   "blocked": 0,
+   "partial": 10646,
+   "leaked": 297357,
+   "recall": 0.6374,
+   "recall_any": 0.6499
+  },
+  "out_of_scope": {
+   "spans": 325071,
+   "redacted": 44350,
+   "blocked": 0,
+   "partial": 7983,
+   "leaked": 272738,
+   "recall": 0.1364,
+   "recall_any": 0.161
+  },
+  "unmapped": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped_labels": [],
+  "per_label": {
+   "account_number": {
+    "spans": 16693,
+    "redacted": 16462,
+    "blocked": 0,
+    "partial": 12,
+    "leaked": 219,
+    "recall": 0.9862,
+    "recall_any": 0.9869,
+    "scope": "in"
+   },
+   "age": {
+    "spans": 7167,
+    "redacted": 19,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 7148,
+    "recall": 0.0027,
+    "recall_any": 0.0027,
+    "scope": "out"
+   },
+   "api_key": {
+    "spans": 4667,
+    "redacted": 4409,
+    "blocked": 0,
+    "partial": 4,
+    "leaked": 254,
+    "recall": 0.9447,
+    "recall_any": 0.9456,
+    "scope": "in"
+   },
+   "bank_routing_number": {
+    "spans": 8354,
+    "redacted": 8171,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 183,
+    "recall": 0.9781,
+    "recall_any": 0.9781,
+    "scope": "in"
+   },
+   "biometric_identifier": {
+    "spans": 11379,
+    "redacted": 8770,
+    "blocked": 0,
+    "partial": 2,
+    "leaked": 2607,
+    "recall": 0.7707,
+    "recall_any": 0.7709,
+    "scope": "out"
+   },
+   "blood_type": {
+    "spans": 5539,
+    "redacted": 22,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 5514,
+    "recall": 0.004,
+    "recall_any": 0.0045,
+    "scope": "out"
+   },
+   "certificate_license_number": {
+    "spans": 3002,
+    "redacted": 2909,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 92,
+    "recall": 0.969,
+    "recall_any": 0.9694,
+    "scope": "in"
+   },
+   "city": {
+    "spans": 18347,
+    "redacted": 17286,
+    "blocked": 0,
+    "partial": 65,
+    "leaked": 996,
+    "recall": 0.9422,
+    "recall_any": 0.9457,
+    "scope": "in"
+   },
+   "company_name": {
+    "spans": 54837,
+    "redacted": 42688,
+    "blocked": 0,
+    "partial": 1136,
+    "leaked": 11013,
+    "recall": 0.7785,
+    "recall_any": 0.7992,
+    "scope": "in"
+   },
+   "coordinate": {
+    "spans": 7659,
+    "redacted": 264,
+    "blocked": 0,
+    "partial": 259,
+    "leaked": 7136,
+    "recall": 0.0345,
+    "recall_any": 0.0683,
+    "scope": "out"
+   },
+   "country": {
+    "spans": 23475,
+    "redacted": 22347,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 1122,
+    "recall": 0.9519,
+    "recall_any": 0.9522,
+    "scope": "in"
+   },
+   "county": {
+    "spans": 8314,
+    "redacted": 7690,
+    "blocked": 0,
+    "partial": 100,
+    "leaked": 524,
+    "recall": 0.9249,
+    "recall_any": 0.937,
+    "scope": "in"
+   },
+   "credit_debit_card": {
+    "spans": 12867,
+    "redacted": 12454,
+    "blocked": 0,
+    "partial": 7,
+    "leaked": 406,
+    "recall": 0.9679,
+    "recall_any": 0.9684,
+    "scope": "in"
+   },
+   "customer_id": {
+    "spans": 20502,
+    "redacted": 19899,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 602,
+    "recall": 0.9706,
+    "recall_any": 0.9706,
+    "scope": "in"
+   },
+   "cvv": {
+    "spans": 4843,
+    "redacted": 4301,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 542,
+    "recall": 0.8881,
+    "recall_any": 0.8881,
+    "scope": "out"
+   },
+   "date": {
+    "spans": 73156,
+    "redacted": 378,
+    "blocked": 0,
+    "partial": 45,
+    "leaked": 72733,
+    "recall": 0.0052,
+    "recall_any": 0.0058,
+    "scope": "out"
+   },
+   "date_of_birth": {
+    "spans": 18079,
+    "redacted": 17675,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 403,
+    "recall": 0.9777,
+    "recall_any": 0.9777,
+    "scope": "in"
+   },
+   "date_time": {
+    "spans": 13221,
+    "redacted": 25,
+    "blocked": 0,
+    "partial": 434,
+    "leaked": 12762,
+    "recall": 0.0019,
+    "recall_any": 0.0347,
+    "scope": "out"
+   },
+   "device_identifier": {
+    "spans": 2507,
+    "redacted": 2231,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 276,
+    "recall": 0.8899,
+    "recall_any": 0.8899,
+    "scope": "in"
+   },
+   "education_level": {
+    "spans": 9378,
+    "redacted": 101,
+    "blocked": 0,
+    "partial": 73,
+    "leaked": 9204,
+    "recall": 0.0108,
+    "recall_any": 0.0186,
+    "scope": "out"
+   },
+   "email": {
+    "spans": 53927,
+    "redacted": 53643,
+    "blocked": 0,
+    "partial": 7,
+    "leaked": 277,
+    "recall": 0.9947,
+    "recall_any": 0.9949,
+    "scope": "in"
+   },
+   "employee_id": {
+    "spans": 8878,
+    "redacted": 8122,
+    "blocked": 0,
+    "partial": 9,
+    "leaked": 747,
+    "recall": 0.9148,
+    "recall_any": 0.9159,
+    "scope": "out"
+   },
+   "employment_status": {
+    "spans": 11018,
+    "redacted": 63,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 10949,
+    "recall": 0.0057,
+    "recall_any": 0.0063,
+    "scope": "out"
+   },
+   "fax_number": {
+    "spans": 6423,
+    "redacted": 6391,
+    "blocked": 0,
+    "partial": 4,
+    "leaked": 28,
+    "recall": 0.995,
+    "recall_any": 0.9956,
+    "scope": "in"
+   },
+   "first_name": {
+    "spans": 84043,
+    "redacted": 82136,
+    "blocked": 0,
+    "partial": 33,
+    "leaked": 1874,
+    "recall": 0.9773,
+    "recall_any": 0.9777,
+    "scope": "in"
+   },
+   "gender": {
+    "spans": 7645,
+    "redacted": 38,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 7607,
+    "recall": 0.005,
+    "recall_any": 0.005,
+    "scope": "out"
+   },
+   "health_plan_beneficiary_number": {
+    "spans": 10558,
+    "redacted": 10273,
+    "blocked": 0,
+    "partial": 9,
+    "leaked": 276,
+    "recall": 0.973,
+    "recall_any": 0.9739,
+    "scope": "in"
+   },
+   "http_cookie": {
+    "spans": 4892,
+    "redacted": 17,
+    "blocked": 0,
+    "partial": 1476,
+    "leaked": 3399,
+    "recall": 0.0035,
+    "recall_any": 0.3052,
+    "scope": "out"
+   },
+   "ipv4": {
+    "spans": 6078,
+    "redacted": 6072,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 6,
+    "recall": 0.999,
+    "recall_any": 0.999,
+    "scope": "in"
+   },
+   "ipv6": {
+    "spans": 3139,
+    "redacted": 2844,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 295,
+    "recall": 0.906,
+    "recall_any": 0.906,
+    "scope": "in"
+   },
+   "language": {
+    "spans": 8643,
+    "redacted": 879,
+    "blocked": 0,
+    "partial": 10,
+    "leaked": 7754,
+    "recall": 0.1017,
+    "recall_any": 0.1029,
+    "scope": "out"
+   },
+   "last_name": {
+    "spans": 59596,
+    "redacted": 58644,
+    "blocked": 0,
+    "partial": 14,
+    "leaked": 938,
+    "recall": 0.984,
+    "recall_any": 0.9843,
+    "scope": "in"
+   },
+   "license_plate": {
+    "spans": 4078,
+    "redacted": 3905,
+    "blocked": 0,
+    "partial": 51,
+    "leaked": 122,
+    "recall": 0.9576,
+    "recall_any": 0.9701,
+    "scope": "out"
+   },
+   "mac_address": {
+    "spans": 4250,
+    "redacted": 4247,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 3,
+    "recall": 0.9993,
+    "recall_any": 0.9993,
+    "scope": "in"
+   },
+   "medical_record_number": {
+    "spans": 11098,
+    "redacted": 10849,
+    "blocked": 0,
+    "partial": 154,
+    "leaked": 95,
+    "recall": 0.9776,
+    "recall_any": 0.9914,
+    "scope": "in"
+   },
+   "national_id": {
+    "spans": 2847,
+    "redacted": 2656,
+    "blocked": 0,
+    "partial": 114,
+    "leaked": 77,
+    "recall": 0.9329,
+    "recall_any": 0.973,
+    "scope": "in"
+   },
+   "occupation": {
+    "spans": 36884,
+    "redacted": 2545,
+    "blocked": 0,
+    "partial": 594,
+    "leaked": 33745,
+    "recall": 0.069,
+    "recall_any": 0.0851,
+    "scope": "out"
+   },
+   "password": {
+    "spans": 6980,
+    "redacted": 6248,
+    "blocked": 0,
+    "partial": 7,
+    "leaked": 725,
+    "recall": 0.8951,
+    "recall_any": 0.8961,
+    "scope": "in"
+   },
+   "phone_number": {
+    "spans": 23930,
+    "redacted": 23614,
+    "blocked": 0,
+    "partial": 9,
+    "leaked": 307,
+    "recall": 0.9868,
+    "recall_any": 0.9872,
+    "scope": "in"
+   },
+   "pin": {
+    "spans": 6456,
+    "redacted": 5810,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 645,
+    "recall": 0.8999,
+    "recall_any": 0.9001,
+    "scope": "in"
+   },
+   "political_view": {
+    "spans": 6402,
+    "redacted": 2159,
+    "blocked": 0,
+    "partial": 631,
+    "leaked": 3612,
+    "recall": 0.3372,
+    "recall_any": 0.4358,
+    "scope": "out"
+   },
+   "postcode": {
+    "spans": 6270,
+    "redacted": 5721,
+    "blocked": 0,
+    "partial": 10,
+    "leaked": 539,
+    "recall": 0.9124,
+    "recall_any": 0.914,
+    "scope": "in"
+   },
+   "race_ethnicity": {
+    "spans": 9248,
+    "redacted": 2246,
+    "blocked": 0,
+    "partial": 51,
+    "leaked": 6951,
+    "recall": 0.2429,
+    "recall_any": 0.2484,
+    "scope": "out"
+   },
+   "religious_belief": {
+    "spans": 6257,
+    "redacted": 1946,
+    "blocked": 0,
+    "partial": 154,
+    "leaked": 4157,
+    "recall": 0.311,
+    "recall_any": 0.3356,
+    "scope": "out"
+   },
+   "sexuality": {
+    "spans": 3312,
+    "redacted": 17,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 3295,
+    "recall": 0.0051,
+    "recall_any": 0.0051,
+    "scope": "out"
+   },
+   "ssn": {
+    "spans": 6062,
+    "redacted": 6061,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.9998,
+    "recall_any": 0.9998,
+    "scope": "in"
+   },
+   "state": {
+    "spans": 18279,
+    "redacted": 16289,
+    "blocked": 0,
+    "partial": 137,
+    "leaked": 1853,
+    "recall": 0.8911,
+    "recall_any": 0.8986,
+    "scope": "in"
+   },
+   "street_address": {
+    "spans": 16848,
+    "redacted": 15578,
+    "blocked": 0,
+    "partial": 789,
+    "leaked": 481,
+    "recall": 0.9246,
+    "recall_any": 0.9715,
+    "scope": "in"
+   },
+   "swift_bic": {
+    "spans": 5559,
+    "redacted": 4491,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 1065,
+    "recall": 0.8079,
+    "recall_any": 0.8084,
+    "scope": "out"
+   },
+   "tax_id": {
+    "spans": 1302,
+    "redacted": 1269,
+    "blocked": 0,
+    "partial": 12,
+    "leaked": 21,
+    "recall": 0.9747,
+    "recall_any": 0.9839,
+    "scope": "in"
+   },
+   "time": {
+    "spans": 24489,
+    "redacted": 51,
+    "blocked": 0,
+    "partial": 16,
+    "leaked": 24422,
+    "recall": 0.0021,
+    "recall_any": 0.0027,
+    "scope": "out"
+   },
+   "unique_id": {
+    "spans": 1777,
+    "redacted": 623,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 1153,
+    "recall": 0.3506,
+    "recall_any": 0.3512,
+    "scope": "out"
+   },
+   "url": {
+    "spans": 37847,
+    "redacted": 22,
+    "blocked": 0,
+    "partial": 3885,
+    "leaked": 33940,
+    "recall": 0.0006,
+    "recall_any": 0.1032,
+    "scope": "out"
+   },
+   "user_name": {
+    "spans": 15800,
+    "redacted": 3346,
+    "blocked": 0,
+    "partial": 280,
+    "leaked": 12174,
+    "recall": 0.2118,
+    "recall_any": 0.2295,
+    "scope": "out"
+   },
+   "vehicle_identifier": {
+    "spans": 4561,
+    "redacted": 4443,
+    "blocked": 0,
+    "partial": 30,
+    "leaked": 88,
+    "recall": 0.9741,
+    "recall_any": 0.9807,
+    "scope": "in"
+   }
+  },
+  "unlocated_values": 0,
+  "blocked_documents": 0,
+  "block_reasons": {},
+  "errors": {},
+  "unplaced_findings": 0,
+  "by_domain": {
+   "Access Control Systems": {
+    "spans": 16679,
+    "redacted": 16195,
+    "blocked": 0,
+    "partial": 34,
+    "leaked": 450,
+    "recall": 0.971,
+    "recall_any": 0.973
+   },
+   "Advertising": {
+    "spans": 15897,
+    "redacted": 14299,
+    "blocked": 0,
+    "partial": 94,
+    "leaked": 1504,
+    "recall": 0.8995,
+    "recall_any": 0.9054
+   },
+   "Automobile": {
+    "spans": 10130,
+    "redacted": 9680,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 410,
+    "recall": 0.9556,
+    "recall_any": 0.9595
+   },
+   "Banking": {
+    "spans": 20652,
+    "redacted": 19860,
+    "blocked": 0,
+    "partial": 42,
+    "leaked": 750,
+    "recall": 0.9617,
+    "recall_any": 0.9637
+   },
+   "Brokerage": {
+    "spans": 20783,
+    "redacted": 19751,
+    "blocked": 0,
+    "partial": 59,
+    "leaked": 973,
+    "recall": 0.9503,
+    "recall_any": 0.9532
+   },
+   "Casualty": {
+    "spans": 20341,
+    "redacted": 19697,
+    "blocked": 0,
+    "partial": 100,
+    "leaked": 544,
+    "recall": 0.9683,
+    "recall_any": 0.9733
+   },
+   "Consulting": {
+    "spans": 18318,
+    "redacted": 17001,
+    "blocked": 0,
+    "partial": 118,
+    "leaked": 1199,
+    "recall": 0.9281,
+    "recall_any": 0.9345
+   },
+   "Credit": {
+    "spans": 20066,
+    "redacted": 19552,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 474,
+    "recall": 0.9744,
+    "recall_any": 0.9764
+   },
+   "Disability": {
+    "spans": 21876,
+    "redacted": 21494,
+    "blocked": 0,
+    "partial": 77,
+    "leaked": 305,
+    "recall": 0.9825,
+    "recall_any": 0.9861
+   },
+   "Elections": {
+    "spans": 20413,
+    "redacted": 19403,
+    "blocked": 0,
+    "partial": 108,
+    "leaked": 902,
+    "recall": 0.9505,
+    "recall_any": 0.9558
+   },
+   "Environmental": {
+    "spans": 16888,
+    "redacted": 14890,
+    "blocked": 0,
+    "partial": 147,
+    "leaked": 1851,
+    "recall": 0.8817,
+    "recall_any": 0.8904
+   },
+   "Fitness": {
+    "spans": 11675,
+    "redacted": 11305,
+    "blocked": 0,
+    "partial": 17,
+    "leaked": 353,
+    "recall": 0.9683,
+    "recall_any": 0.9698
+   },
+   "Health": {
+    "spans": 22003,
+    "redacted": 21588,
+    "blocked": 0,
+    "partial": 56,
+    "leaked": 359,
+    "recall": 0.9811,
+    "recall_any": 0.9837
+   },
+   "Healthcare Providers": {
+    "spans": 18943,
+    "redacted": 18227,
+    "blocked": 0,
+    "partial": 129,
+    "leaked": 587,
+    "recall": 0.9622,
+    "recall_any": 0.969
+   },
+   "Human Resources": {
+    "spans": 15813,
+    "redacted": 14269,
+    "blocked": 0,
+    "partial": 162,
+    "leaked": 1382,
+    "recall": 0.9024,
+    "recall_any": 0.9126
+   },
+   "Information Technology": {
+    "spans": 15578,
+    "redacted": 14497,
+    "blocked": 0,
+    "partial": 48,
+    "leaked": 1033,
+    "recall": 0.9306,
+    "recall_any": 0.9337
+   },
+   "Insurance": {
+    "spans": 16695,
+    "redacted": 15769,
+    "blocked": 0,
+    "partial": 57,
+    "leaked": 869,
+    "recall": 0.9445,
+    "recall_any": 0.9479
+   },
+   "Investment": {
+    "spans": 17449,
+    "redacted": 16578,
+    "blocked": 0,
+    "partial": 60,
+    "leaked": 811,
+    "recall": 0.9501,
+    "recall_any": 0.9535
+   },
+   "Life": {
+    "spans": 20952,
+    "redacted": 20521,
+    "blocked": 0,
+    "partial": 52,
+    "leaked": 379,
+    "recall": 0.9794,
+    "recall_any": 0.9819
+   },
+   "Marketing": {
+    "spans": 19974,
+    "redacted": 17975,
+    "blocked": 0,
+    "partial": 278,
+    "leaked": 1721,
+    "recall": 0.8999,
+    "recall_any": 0.9138
+   },
+   "Mortgage": {
+    "spans": 24130,
+    "redacted": 22769,
+    "blocked": 0,
+    "partial": 165,
+    "leaked": 1196,
+    "recall": 0.9436,
+    "recall_any": 0.9504
+   },
+   "Product": {
+    "spans": 17348,
+    "redacted": 16466,
+    "blocked": 0,
+    "partial": 37,
+    "leaked": 845,
+    "recall": 0.9492,
+    "recall_any": 0.9513
+   },
+   "Property": {
+    "spans": 18072,
+    "redacted": 17168,
+    "blocked": 0,
+    "partial": 218,
+    "leaked": 686,
+    "recall": 0.95,
+    "recall_any": 0.962
+   },
+   "Public Safety": {
+    "spans": 14306,
+    "redacted": 13322,
+    "blocked": 0,
+    "partial": 140,
+    "leaked": 844,
+    "recall": 0.9312,
+    "recall_any": 0.941
+   },
+   "Services": {
+    "spans": 18597,
+    "redacted": 17494,
+    "blocked": 0,
+    "partial": 146,
+    "leaked": 957,
+    "recall": 0.9407,
+    "recall_any": 0.9485
+   },
+   "Social Science": {
+    "spans": 16516,
+    "redacted": 15549,
+    "blocked": 0,
+    "partial": 69,
+    "leaked": 898,
+    "recall": 0.9415,
+    "recall_any": 0.9456
+   },
+   "Sports": {
+    "spans": 17952,
+    "redacted": 16822,
+    "blocked": 0,
+    "partial": 91,
+    "leaked": 1039,
+    "recall": 0.9371,
+    "recall_any": 0.9421
+   },
+   "Travel": {
+    "spans": 18951,
+    "redacted": 18195,
+    "blocked": 0,
+    "partial": 28,
+    "leaked": 728,
+    "recall": 0.9601,
+    "recall_any": 0.9616
+   },
+   "User Account and Transaction Services": {
+    "spans": 17294,
+    "redacted": 16673,
+    "blocked": 0,
+    "partial": 51,
+    "leaked": 570,
+    "recall": 0.9641,
+    "recall_any": 0.967
+   }
+  },
+  "by_document_format": {
+   "structured": {
+    "spans": 284191,
+    "redacted": 267814,
+    "blocked": 0,
+    "partial": 1568,
+    "leaked": 14809,
+    "recall": 0.9424,
+    "recall_any": 0.9479
+   },
+   "unstructured": {
+    "spans": 240100,
+    "redacted": 229195,
+    "blocked": 0,
+    "partial": 1095,
+    "leaked": 9810,
+    "recall": 0.9546,
+    "recall_any": 0.9591
+   }
+  },
+  "by_locale": {
+   "intl": {
+    "spans": 261673,
+    "redacted": 247428,
+    "blocked": 0,
+    "partial": 1762,
+    "leaked": 12483,
+    "recall": 0.9456,
+    "recall_any": 0.9523
+   },
+   "us": {
+    "spans": 262618,
+    "redacted": 249581,
+    "blocked": 0,
+    "partial": 901,
+    "leaked": 12136,
+    "recall": 0.9504,
+    "recall_any": 0.9538
+   }
+  },
+  "by_half": {
+   "dev": {
+    "spans": 259214,
+    "redacted": 245785,
+    "blocked": 0,
+    "partial": 1293,
+    "leaked": 12136,
+    "recall": 0.9482,
+    "recall_any": 0.9532
+   },
+   "holdout": {
+    "spans": 265077,
+    "redacted": 251224,
+    "blocked": 0,
+    "partial": 1370,
+    "leaked": 12483,
+    "recall": 0.9477,
+    "recall_any": 0.9529
+   }
+  },
+  "collateral": {
+   "chars_outside_gold": 60434228,
+   "redacted_outside_gold": 1416179,
+   "rate": 0.0234,
+   "by_type": {
+    "ORGANIZATION": 770938,
+    "PERSON": 477511,
+    "ADDRESS": 58731,
+    "LOCATION": 43845,
+    "ACCOUNT_ID": 35716,
+    "SECRET": 10949,
+    "US_SSN": 4804,
+    "PHONE": 3181,
+    "IP_ADDRESS": 2631,
+    "EMAIL": 2439,
+    "DEVICE_ID": 1725,
+    "NATIONAL_ID": 1340,
+    "ID_DOCUMENT": 1139,
+    "CREDIT_CARD": 833,
+    "DATE_OF_BIRTH": 181,
+    "IBAN": 145,
+    "ENCODED_DATA": 52,
+    "UK_NINO": 19
+   }
+  },
+  "latency_ms": {
+   "p50": 27.88,
+   "p95": 75.83,
+   "p99": 114.16,
+   "max": 747.68,
+   "mean_chars": 959
+  }
+ }
+}

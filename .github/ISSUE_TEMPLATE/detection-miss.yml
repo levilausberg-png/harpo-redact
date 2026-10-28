@@ -1,0 +1,28 @@
+name: Detection miss or false positive
+description: Something was not redacted, or something harmless was
+labels: [detection]
+body:
+  - type: markdown
+    attributes:
+      value: "**Use made-up values only.** Never paste real personal data or secrets. If a real value reached a provider, report it privately instead (see SECURITY.md)."
+  - type: dropdown
+    id: kind
+    attributes: { label: What happened, options: ["A value was not redacted (miss)", "Something harmless was redacted (false positive)"] }
+    validations: { required: true }
+  - type: input
+    id: type
+    attributes: { label: Kind of data, placeholder: "e.g. Dutch BSN, German IBAN, Stripe key, a person's name" }
+    validations: { required: true }
+  - type: textarea
+    id: sample
+    attributes: { label: A fake example that reproduces it, description: "The text as sent, with invented values. Include the language and any formatting (line breaks, spacing, encoding).", render: text }
+    validations: { required: true }
+  - type: textarea
+    id: config
+    attributes: { label: Relevant settings, description: "NER on or off, language models, SLM, mode. No keys." }
+  - type: checkboxes
+    id: bench
+    attributes:
+      label: LeakBench
+      options:
+        - label: I can add this as a LeakBench case (bench/leakbench.py) so the fix stays fixed

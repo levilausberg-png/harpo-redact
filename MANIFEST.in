@@ -1,0 +1,5 @@
+# The sdist carries what builds the wheel: src/, pyproject.toml, README.md, LICENSE and NOTICE. The test suite needs
+# the whole repository (its data and helpers, bench/, tools/, the workflows, the Dockerfile and the Compose files), so
+# setuptools' default of shipping tests/test_*.py alone, without any of that, would ship tests that cannot run. Run the
+# tests from a clone or the source archive instead.
+prune tests

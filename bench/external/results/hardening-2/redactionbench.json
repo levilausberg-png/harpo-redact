@@ -1,0 +1,389 @@
+{
+ "dataset": "redactionbench",
+ "file": "test-00000-of-00001.parquet",
+ "file_sha256": "17ea0b577344917ce6e265667dd833cbf18e4f2cc07aa230d55f1e151219f5f0",
+ "documents": 200,
+ "limit": null,
+ "half": null,
+ "config": "default-image",
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "e00f4dddcd51d4fe625007f57d6ac2a037a6b3c8d914fa430392ad87fc749c27",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "scope_sha256": "e4f5161128b412a86f101dbc0bf94be72fd2dd9fa21226712188c2a13b625ddf",
+ "harness_sha256": "640bc588a6fe40673b9191a4a6b40aadf5fe6c90866f4e0f7bb1653bc86e560b",
+ "started": "2026-10-19T13:20:06+00:00",
+ "seconds": 57.3,
+ "metrics": {
+  "documents": 200,
+  "in_scope": {
+   "spans": 16988,
+   "redacted": 14964,
+   "blocked": 0,
+   "partial": 108,
+   "leaked": 1916,
+   "recall": 0.8809,
+   "recall_any": 0.8872
+  },
+  "all_labels": {
+   "spans": 16988,
+   "redacted": 14964,
+   "blocked": 0,
+   "partial": 108,
+   "leaked": 1916,
+   "recall": 0.8809,
+   "recall_any": 0.8872
+  },
+  "out_of_scope": {
+   "spans": 15982,
+   "redacted": 6594,
+   "blocked": 0,
+   "partial": 1002,
+   "leaked": 8386,
+   "recall": 0.4126,
+   "recall_any": 0.4753
+  },
+  "unmapped": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped_labels": [],
+  "per_label": {
+   "contextual": {
+    "spans": 15982,
+    "redacted": 6594,
+    "blocked": 0,
+    "partial": 1002,
+    "leaked": 8386,
+    "recall": 0.4126,
+    "recall_any": 0.4753,
+    "scope": "out"
+   },
+   "mandatory": {
+    "spans": 16988,
+    "redacted": 14964,
+    "blocked": 0,
+    "partial": 108,
+    "leaked": 1916,
+    "recall": 0.8809,
+    "recall_any": 0.8872,
+    "scope": "in"
+   }
+  },
+  "unlocated_values": 0,
+  "blocked_documents": 0,
+  "block_reasons": {},
+  "errors": {},
+  "unplaced_findings": 0,
+  "neutral_labels": [
+   "contextual"
+  ],
+  "by_category": {
+   "academic": {
+    "spans": 272,
+    "redacted": 252,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 19,
+    "recall": 0.9265,
+    "recall_any": 0.9301
+   },
+   "code": {
+    "spans": 270,
+    "redacted": 171,
+    "blocked": 0,
+    "partial": 5,
+    "leaked": 94,
+    "recall": 0.6333,
+    "recall_any": 0.6519
+   },
+   "emails": {
+    "spans": 482,
+    "redacted": 364,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 118,
+    "recall": 0.7552,
+    "recall_any": 0.7552
+   },
+   "files": {
+    "spans": 4360,
+    "redacted": 3493,
+    "blocked": 0,
+    "partial": 25,
+    "leaked": 842,
+    "recall": 0.8011,
+    "recall_any": 0.8069
+   },
+   "financial": {
+    "spans": 596,
+    "redacted": 473,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 120,
+    "recall": 0.7936,
+    "recall_any": 0.7987
+   },
+   "government": {
+    "spans": 744,
+    "redacted": 593,
+    "blocked": 0,
+    "partial": 4,
+    "leaked": 147,
+    "recall": 0.797,
+    "recall_any": 0.8024
+   },
+   "legal": {
+    "spans": 607,
+    "redacted": 523,
+    "blocked": 0,
+    "partial": 5,
+    "leaked": 79,
+    "recall": 0.8616,
+    "recall_any": 0.8699
+   },
+   "logs": {
+    "spans": 8339,
+    "redacted": 7976,
+    "blocked": 0,
+    "partial": 63,
+    "leaked": 300,
+    "recall": 0.9565,
+    "recall_any": 0.964
+   },
+   "medical": {
+    "spans": 308,
+    "redacted": 258,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 50,
+    "recall": 0.8377,
+    "recall_any": 0.8377
+   },
+   "operations": {
+    "spans": 328,
+    "redacted": 261,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 66,
+    "recall": 0.7957,
+    "recall_any": 0.7988
+   },
+   "terminal": {
+    "spans": 682,
+    "redacted": 600,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 81,
+    "recall": 0.8798,
+    "recall_any": 0.8812
+   }
+  },
+  "by_synthetic": {
+   "False": {
+    "spans": 2858,
+    "redacted": 2360,
+    "blocked": 0,
+    "partial": 14,
+    "leaked": 484,
+    "recall": 0.8258,
+    "recall_any": 0.8307
+   },
+   "True": {
+    "spans": 14130,
+    "redacted": 12604,
+    "blocked": 0,
+    "partial": 94,
+    "leaked": 1432,
+    "recall": 0.892,
+    "recall_any": 0.8987
+   }
+  },
+  "by_half": {
+   "dev": {
+    "spans": 9599,
+    "redacted": 8780,
+    "blocked": 0,
+    "partial": 11,
+    "leaked": 808,
+    "recall": 0.9147,
+    "recall_any": 0.9158
+   },
+   "holdout": {
+    "spans": 7389,
+    "redacted": 6184,
+    "blocked": 0,
+    "partial": 97,
+    "leaked": 1108,
+    "recall": 0.8369,
+    "recall_any": 0.85
+   }
+  },
+  "collateral": {
+   "chars_outside_gold": 1584856,
+   "redacted_outside_gold": 144914,
+   "rate": 0.0914,
+   "by_type": {
+    "ORGANIZATION": 63912,
+    "PERSON": 54657,
+    "LOCATION": 9372,
+    "EMAIL": 5333,
+    "ACCOUNT_ID": 5096,
+    "SECRET": 4629,
+    "PHONE": 882,
+    "IP_ADDRESS": 458,
+    "ADDRESS": 271,
+    "CRYPTO_ADDRESS": 84,
+    "NATIONAL_ID": 48,
+    "CREDIT_CARD": 45,
+    "DEVICE_ID": 44,
+    "PRIVATE_KEY": 43,
+    "ID_DOCUMENT": 34,
+    "DATE_OF_BIRTH": 6
+   }
+  },
+  "latency_ms": {
+   "p50": 238.77,
+   "p95": 1361.29,
+   "p99": 5739.71,
+   "max": 6325.26,
+   "mean_chars": 13319
+  },
+  "r_score": {
+   "documents": 200,
+   "mean": 0.3115,
+   "p50": 0.2955,
+   "p20": 0.0903,
+   "unstructured": {
+    "documents": 115,
+    "mean": 0.2957,
+    "p50": 0.267,
+    "p20": 0.1062
+   },
+   "by_category": {
+    "academic": {
+     "documents": 16,
+     "mean": 0.3043,
+     "p50": 0.3351,
+     "p20": 0.1062
+    },
+    "code": {
+     "documents": 16,
+     "mean": 0.0939,
+     "p50": 0.0769,
+     "p20": 0.027
+    },
+    "emails": {
+     "documents": 16,
+     "mean": 0.3903,
+     "p50": 0.345,
+     "p20": 0.2308
+    },
+    "files": {
+     "documents": 36,
+     "mean": 0.4164,
+     "p50": 0.5,
+     "p20": 0.1064
+    },
+    "financial": {
+     "documents": 18,
+     "mean": 0.2508,
+     "p50": 0.2313,
+     "p20": 0.1304
+    },
+    "government": {
+     "documents": 16,
+     "mean": 0.3623,
+     "p50": 0.353,
+     "p20": 0.1498
+    },
+    "legal": {
+     "documents": 18,
+     "mean": 0.1898,
+     "p50": 0.1967,
+     "p20": 0.0281
+    },
+    "logs": {
+     "documents": 17,
+     "mean": 0.3252,
+     "p50": 0.2591,
+     "p20": 0.1727
+    },
+    "medical": {
+     "documents": 16,
+     "mean": 0.2185,
+     "p50": 0.1526,
+     "p20": 0.0544
+    },
+    "operations": {
+     "documents": 15,
+     "mean": 0.3777,
+     "p50": 0.3316,
+     "p20": 0.2609
+    },
+    "terminal": {
+     "documents": 16,
+     "mean": 0.3929,
+     "p50": 0.4232,
+     "p20": 0.3206
+    }
+   },
+   "macro_by_category": 0.302,
+   "by_half": {
+    "dev": {
+     "documents": 97,
+     "mean": 0.3152,
+     "p50": 0.2949,
+     "p20": 0.0797
+    },
+    "holdout": {
+     "documents": 103,
+     "mean": 0.3081,
+     "p50": 0.2955,
+     "p20": 0.1016
+    }
+   },
+   "by_synthetic": {
+    "False": {
+     "documents": 101,
+     "mean": 0.275,
+     "p50": 0.25,
+     "p20": 0.0797
+    },
+    "True": {
+     "documents": 99,
+     "mean": 0.3489,
+     "p50": 0.3429,
+     "p20": 0.1001
+    }
+   },
+   "terms": {
+    "mandatory_entities": 7692,
+    "mandatory_coverage": 6190.76,
+    "contextual_attempted": 5190,
+    "contextual_penalty": 877.75,
+    "false_runs": 19048,
+    "whole_gaps": 23,
+    "all_contextual_documents": 11
+   }
+  }
+ },
+ "r_score_run": {
+  "started": "2026-10-19T16:46:48+00:00",
+  "harness_sha256": "ce86f04686e61419889878400d85887a71aca1df6c2dcb3d401d8f6970939f9e",
+  "note": "a re-run of the same build (same package digest) with the harness that adds the R-Score; every other metric in this file was reproduced exactly"
+ }
+}

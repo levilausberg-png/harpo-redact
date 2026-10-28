@@ -1,0 +1,2321 @@
+{
+ "dataset": "prowlbench",
+ "file": "prowlbench.jsonl",
+ "file_sha256": "0a66fc09b180261eabb311af04f7be5112895e27dd08dbd18cdcbdd07021b70f",
+ "documents": 24603,
+ "limit": null,
+ "half": null,
+ "config": "default-image",
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "8f55a57e33859c11efa02593bcfb1ea2ce6318dd5eaec03b46227f5d58617349",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "scope_sha256": "5c6697f4ca2ce2ea9466458decb783c2692d4dfa2444224e59cdb6618104f8d5",
+ "harness_sha256": "cb165cf050a65fcbe5bdf9e588dd59c1054b24aba49d9e3da3d53760ac02828e",
+ "started": "2026-10-13T23:24:12+00:00",
+ "seconds": 94.1,
+ "metrics": {
+  "documents": 24603,
+  "in_scope": {
+   "spans": 9110,
+   "redacted": 5997,
+   "blocked": 0,
+   "partial": 1098,
+   "leaked": 2015,
+   "recall": 0.6583,
+   "recall_any": 0.7788
+  },
+  "all_labels": {
+   "spans": 9110,
+   "redacted": 5997,
+   "blocked": 0,
+   "partial": 1098,
+   "leaked": 2015,
+   "recall": 0.6583,
+   "recall_any": 0.7788
+  },
+  "out_of_scope": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped_labels": [],
+  "per_label": {
+   "secret": {
+    "spans": 9110,
+    "redacted": 5997,
+    "blocked": 0,
+    "partial": 1098,
+    "leaked": 2015,
+    "recall": 0.6583,
+    "recall_any": 0.7788,
+    "scope": "in"
+   }
+  },
+  "unlocated_values": 0,
+  "blocked_documents": 0,
+  "block_reasons": {},
+  "errors": {},
+  "unplaced_findings": 0,
+  "by_tier": {
+   "T1_structured": {
+    "spans": 5728,
+    "redacted": 4459,
+    "blocked": 0,
+    "partial": 570,
+    "leaked": 699,
+    "recall": 0.7785,
+    "recall_any": 0.878
+   },
+   "T3_freeform_multilingual": {
+    "spans": 3382,
+    "redacted": 1538,
+    "blocked": 0,
+    "partial": 528,
+    "leaked": 1316,
+    "recall": 0.4548,
+    "recall_any": 0.6109
+   }
+  },
+  "by_lang": {
+   "de": {
+    "spans": 408,
+    "redacted": 203,
+    "blocked": 0,
+    "partial": 28,
+    "leaked": 177,
+    "recall": 0.4975,
+    "recall_any": 0.5662
+   },
+   "en": {
+    "spans": 4222,
+    "redacted": 2886,
+    "blocked": 0,
+    "partial": 578,
+    "leaked": 758,
+    "recall": 0.6836,
+    "recall_any": 0.8205
+   },
+   "es": {
+    "spans": 386,
+    "redacted": 261,
+    "blocked": 0,
+    "partial": 52,
+    "leaked": 73,
+    "recall": 0.6762,
+    "recall_any": 0.8109
+   },
+   "fr": {
+    "spans": 1535,
+    "redacted": 962,
+    "blocked": 0,
+    "partial": 145,
+    "leaked": 428,
+    "recall": 0.6267,
+    "recall_any": 0.7212
+   },
+   "it": {
+    "spans": 151,
+    "redacted": 119,
+    "blocked": 0,
+    "partial": 15,
+    "leaked": 17,
+    "recall": 0.7881,
+    "recall_any": 0.8874
+   },
+   "ja": {
+    "spans": 688,
+    "redacted": 455,
+    "blocked": 0,
+    "partial": 74,
+    "leaked": 159,
+    "recall": 0.6613,
+    "recall_any": 0.7689
+   },
+   "non-en": {
+    "spans": 436,
+    "redacted": 274,
+    "blocked": 0,
+    "partial": 72,
+    "leaked": 90,
+    "recall": 0.6284,
+    "recall_any": 0.7936
+   },
+   "ru": {
+    "spans": 662,
+    "redacted": 466,
+    "blocked": 0,
+    "partial": 63,
+    "leaked": 133,
+    "recall": 0.7039,
+    "recall_any": 0.7991
+   },
+   "zh": {
+    "spans": 622,
+    "redacted": 371,
+    "blocked": 0,
+    "partial": 71,
+    "leaked": 180,
+    "recall": 0.5965,
+    "recall_any": 0.7106
+   }
+  },
+  "by_source": {
+   "code": {
+    "spans": 1376,
+    "redacted": 911,
+    "blocked": 0,
+    "partial": 380,
+    "leaked": 85,
+    "recall": 0.6621,
+    "recall_any": 0.9382
+   },
+   "confluence": {
+    "spans": 1478,
+    "redacted": 981,
+    "blocked": 0,
+    "partial": 168,
+    "leaked": 329,
+    "recall": 0.6637,
+    "recall_any": 0.7774
+   },
+   "jira": {
+    "spans": 2031,
+    "redacted": 1248,
+    "blocked": 0,
+    "partial": 174,
+    "leaked": 609,
+    "recall": 0.6145,
+    "recall_any": 0.7001
+   },
+   "log": {
+    "spans": 2457,
+    "redacted": 1634,
+    "blocked": 0,
+    "partial": 189,
+    "leaked": 634,
+    "recall": 0.665,
+    "recall_any": 0.742
+   },
+   "slack": {
+    "spans": 1768,
+    "redacted": 1223,
+    "blocked": 0,
+    "partial": 187,
+    "leaked": 358,
+    "recall": 0.6917,
+    "recall_any": 0.7975
+   }
+  },
+  "by_origin": {
+   "augmented": {
+    "spans": 6432,
+    "redacted": 4378,
+    "blocked": 0,
+    "partial": 850,
+    "leaked": 1204,
+    "recall": 0.6807,
+    "recall_any": 0.8128
+   },
+   "real": {
+    "spans": 1619,
+    "redacted": 916,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 700,
+    "recall": 0.5658,
+    "recall_any": 0.5676
+   },
+   "synthetic": {
+    "spans": 1059,
+    "redacted": 703,
+    "blocked": 0,
+    "partial": 245,
+    "leaked": 111,
+    "recall": 0.6638,
+    "recall_any": 0.8952
+   }
+  },
+  "by_type": {
+   "anthropic_api_key": {
+    "spans": 216,
+    "redacted": 216,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "aws_access_key_id": {
+    "spans": 182,
+    "redacted": 182,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "aws_secret_access_key": {
+    "spans": 44,
+    "redacted": 36,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 8,
+    "recall": 0.8182,
+    "recall_any": 0.8182
+   },
+   "azure_storage_key": {
+    "spans": 257,
+    "redacted": 5,
+    "blocked": 0,
+    "partial": 238,
+    "leaked": 14,
+    "recall": 0.0195,
+    "recall_any": 0.9455
+   },
+   "basic_auth_header": {
+    "spans": 123,
+    "redacted": 4,
+    "blocked": 0,
+    "partial": 115,
+    "leaked": 4,
+    "recall": 0.0325,
+    "recall_any": 0.9675
+   },
+   "datadog_api_key": {
+    "spans": 274,
+    "redacted": 156,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 117,
+    "recall": 0.5693,
+    "recall_any": 0.573
+   },
+   "db_connection_string": {
+    "spans": 419,
+    "redacted": 15,
+    "blocked": 0,
+    "partial": 404,
+    "leaked": 0,
+    "recall": 0.0358,
+    "recall_any": 1.0
+   },
+   "digitalocean_token": {
+    "spans": 245,
+    "redacted": 223,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 22,
+    "recall": 0.9102,
+    "recall_any": 0.9102
+   },
+   "discord_bot_token": {
+    "spans": 242,
+    "redacted": 93,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 146,
+    "recall": 0.3843,
+    "recall_any": 0.3967
+   },
+   "gcp_api_key": {
+    "spans": 252,
+    "redacted": 252,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "gcp_service_account": {
+    "spans": 229,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 229,
+    "leaked": 0,
+    "recall": 0.0,
+    "recall_any": 1.0
+   },
+   "generic_api_key": {
+    "spans": 968,
+    "redacted": 599,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 368,
+    "recall": 0.6188,
+    "recall_any": 0.6198
+   },
+   "generic_high_entropy": {
+    "spans": 545,
+    "redacted": 240,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 299,
+    "recall": 0.4404,
+    "recall_any": 0.4514
+   },
+   "generic_password": {
+    "spans": 1327,
+    "redacted": 680,
+    "blocked": 0,
+    "partial": 2,
+    "leaked": 645,
+    "recall": 0.5124,
+    "recall_any": 0.5139
+   },
+   "github_pat_classic": {
+    "spans": 238,
+    "redacted": 238,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "github_pat_fine_grained": {
+    "spans": 29,
+    "redacted": 29,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "github_token_oauth": {
+    "spans": 249,
+    "redacted": 249,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "gitlab_pat": {
+    "spans": 265,
+    "redacted": 265,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "huggingface_token": {
+    "spans": 252,
+    "redacted": 110,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 142,
+    "recall": 0.4365,
+    "recall_any": 0.4365
+   },
+   "jwt": {
+    "spans": 213,
+    "redacted": 213,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "npm_token": {
+    "spans": 268,
+    "redacted": 234,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 34,
+    "recall": 0.8731,
+    "recall_any": 0.8731
+   },
+   "openai_api_key": {
+    "spans": 271,
+    "redacted": 271,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "private_key_pem": {
+    "spans": 210,
+    "redacted": 210,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "pypi_token": {
+    "spans": 27,
+    "redacted": 27,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "sendgrid_api_key": {
+    "spans": 272,
+    "redacted": 251,
+    "blocked": 0,
+    "partial": 2,
+    "leaked": 19,
+    "recall": 0.9228,
+    "recall_any": 0.9301
+   },
+   "shopify_token": {
+    "spans": 231,
+    "redacted": 231,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "slack_token": {
+    "spans": 261,
+    "redacted": 261,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "slack_webhook": {
+    "spans": 253,
+    "redacted": 253,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "stripe_secret_key": {
+    "spans": 271,
+    "redacted": 271,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 0,
+    "recall": 1.0,
+    "recall_any": 1.0
+   },
+   "telegram_bot_token": {
+    "spans": 273,
+    "redacted": 18,
+    "blocked": 0,
+    "partial": 97,
+    "leaked": 158,
+    "recall": 0.0659,
+    "recall_any": 0.4212
+   },
+   "twilio_api_key": {
+    "spans": 204,
+    "redacted": 165,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 39,
+    "recall": 0.8088,
+    "recall_any": 0.8088
+   }
+  },
+  "by_half": {
+   "dev": {
+    "spans": 4553,
+    "redacted": 3052,
+    "blocked": 0,
+    "partial": 543,
+    "leaked": 958,
+    "recall": 0.6703,
+    "recall_any": 0.7896
+   },
+   "holdout": {
+    "spans": 4557,
+    "redacted": 2945,
+    "blocked": 0,
+    "partial": 555,
+    "leaked": 1057,
+    "recall": 0.6463,
+    "recall_any": 0.768
+   }
+  },
+  "collateral": {
+   "chars_outside_gold": 2832088,
+   "redacted_outside_gold": 489108,
+   "rate": 0.1727,
+   "by_type": {
+    "SECRET": 296730,
+    "PERSON": 52330,
+    "PRIVATE_KEY": 42897,
+    "ORGANIZATION": 40930,
+    "IP_ADDRESS": 17434,
+    "EMAIL": 17054,
+    "LOCATION": 10572,
+    "DEVICE_ID": 2865,
+    "PHONE": 2716,
+    "ACCOUNT_ID": 1738,
+    "ADDRESS": 1258,
+    "US_SSN": 594,
+    "IBAN": 445,
+    "DATE_OF_BIRTH": 390,
+    "CRYPTO_ADDRESS": 378,
+    "ENCODED_DATA": 368,
+    "CREDIT_CARD": 283,
+    "NATIONAL_ID": 90,
+    "ID_DOCUMENT": 36
+   }
+  },
+  "latency_ms": {
+   "p50": 5.45,
+   "p95": 19.66,
+   "p99": 29.72,
+   "max": 56.77,
+   "mean_chars": 175
+  }
+ },
+ "prowlbench": {
+  "harpo": {
+   "precision": 0.9354,
+   "recall": 0.7528,
+   "f1": 0.8343,
+   "accuracy": 0.7988,
+   "per_tier": {
+    "T1_structured": {
+     "recall": 0.8725,
+     "n": 7033
+    },
+    "T2_generic_context": {
+     "recall": 0.6911,
+     "n": 3519
+    },
+    "T3_freeform_multilingual": {
+     "recall": 0.6488,
+     "n": 6000
+    },
+    "T4_hard_negative": {
+     "fp_rate": 0.1068,
+     "n": 8051
+    }
+   },
+   "per_language": {
+    "de": {
+     "recall": 0.527,
+     "n": 408
+    },
+    "en": {
+     "recall": 0.7556,
+     "n": 11430
+    },
+    "es": {
+     "recall": 0.7984,
+     "n": 387
+    },
+    "fr": {
+     "recall": 0.7064,
+     "n": 1536
+    },
+    "it": {
+     "recall": 0.8874,
+     "n": 151
+    },
+    "ja": {
+     "recall": 0.766,
+     "n": 688
+    },
+    "non-en": {
+     "recall": 0.8777,
+     "n": 654
+    },
+    "ru": {
+     "recall": 0.8024,
+     "n": 663
+    },
+    "zh": {
+     "recall": 0.7071,
+     "n": 635
+    }
+   },
+   "per_source": {
+    "code": {
+     "recall": 0.7468,
+     "n": 6693
+    },
+    "confluence": {
+     "recall": 0.7075,
+     "n": 2643
+    },
+    "jira": {
+     "recall": 0.7645,
+     "n": 2990
+    },
+    "log": {
+     "recall": 0.7701,
+     "n": 2458
+    },
+    "slack": {
+     "recall": 0.7998,
+     "n": 1768
+    }
+   },
+   "negatives": {
+    "credential_named": {
+     "fp_rate": 0.6636,
+     "n": 541
+    },
+    "other": {
+     "fp_rate": 0.0667,
+     "n": 7510
+    }
+   },
+   "per_type": {
+    "anthropic_api_key": {
+     "recall": 1.0,
+     "n": 244
+    },
+    "aws_access_key_id": {
+     "recall": 0.9464,
+     "n": 280
+    },
+    "aws_secret_access_key": {
+     "recall": 0.71,
+     "n": 200
+    },
+    "azure_storage_key": {
+     "recall": 0.951,
+     "n": 286
+    },
+    "base64_data": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "basic_auth_header": {
+     "recall": 0.8591,
+     "n": 660
+    },
+    "bcrypt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "ci_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "cli_flag": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "config": {
+     "fp_rate": 0.0,
+     "n": 3
+    },
+    "correlation_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "credit_card": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "data_uri": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "datadog_api_key": {
+     "recall": 0.5833,
+     "n": 288
+    },
+    "db_connection_string": {
+     "recall": 0.9983,
+     "n": 1143
+    },
+    "digitalocean_token": {
+     "recall": 0.9167,
+     "n": 264
+    },
+    "discord_bot_token": {
+     "recall": 0.3927,
+     "n": 275
+    },
+    "env_ref": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "example_key": {
+     "fp_rate": 1.0,
+     "n": 1
+    },
+    "fingerprint": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "gcp_api_key": {
+     "recall": 0.9762,
+     "n": 294
+    },
+    "gcp_service_account": {
+     "recall": 1.0,
+     "n": 265
+    },
+    "generic_api_key": {
+     "recall": 0.6928,
+     "n": 3236
+    },
+    "generic_high_entropy": {
+     "recall": 0.4209,
+     "n": 1138
+    },
+    "generic_password": {
+     "recall": 0.5673,
+     "n": 3342
+    },
+    "git_sha": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "github_pat_classic": {
+     "recall": 1.0,
+     "n": 268
+    },
+    "github_pat_fine_grained": {
+     "recall": 1.0,
+     "n": 195
+    },
+    "github_token_oauth": {
+     "recall": 1.0,
+     "n": 270
+    },
+    "gitlab_pat": {
+     "recall": 1.0,
+     "n": 297
+    },
+    "hex_color": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "hex_colors": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "huggingface_token": {
+     "recall": 0.4561,
+     "n": 285
+    },
+    "iban": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "jwt": {
+     "recall": 0.9765,
+     "n": 298
+    },
+    "k8s_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "md5": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "near_miss_aws": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_github": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_jwt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "neg_aws_arn": {
+     "fp_rate": 0.0,
+     "n": 360
+    },
+    "neg_base64_data": {
+     "fp_rate": 0.0244,
+     "n": 451
+    },
+    "neg_data_blob": {
+     "fp_rate": 0.0,
+     "n": 360
+    },
+    "neg_data_uri": {
+     "fp_rate": 0.0,
+     "n": 300
+    },
+    "neg_env_interp": {
+     "fp_rate": 0.2778,
+     "n": 54
+    },
+    "neg_example_key": {
+     "fp_rate": 0.6667,
+     "n": 9
+    },
+    "neg_git_sha": {
+     "fp_rate": 0.0498,
+     "n": 603
+    },
+    "neg_hash": {
+     "fp_rate": 0.1236,
+     "n": 534
+    },
+    "neg_hash_id": {
+     "fp_rate": 0.0,
+     "n": 420
+    },
+    "neg_hex_color": {
+     "fp_rate": 0.1199,
+     "n": 567
+    },
+    "neg_jwt_shaped": {
+     "fp_rate": 0.1667,
+     "n": 180
+    },
+    "neg_k8s_id": {
+     "fp_rate": 0.0,
+     "n": 480
+    },
+    "neg_localhost_dsn": {
+     "fp_rate": 0.7333,
+     "n": 180
+    },
+    "neg_multilingual_prose": {
+     "fp_rate": 0.0,
+     "n": 56
+    },
+    "neg_natural_token": {
+     "fp_rate": 0.0658,
+     "n": 441
+    },
+    "neg_near_miss": {
+     "fp_rate": 0.4465,
+     "n": 551
+    },
+    "neg_pii": {
+     "fp_rate": 0.0417,
+     "n": 360
+    },
+    "neg_placeholder": {
+     "fp_rate": 0.3704,
+     "n": 27
+    },
+    "neg_pw_hash": {
+     "fp_rate": 0.1833,
+     "n": 180
+    },
+    "neg_sri_integrity": {
+     "fp_rate": 0.0,
+     "n": 180
+    },
+    "neg_ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 540
+    },
+    "neg_uuid": {
+     "fp_rate": 0.2339,
+     "n": 573
+    },
+    "neg_version_or_id": {
+     "fp_rate": 0.0539,
+     "n": 594
+    },
+    "npm_token": {
+     "recall": 0.8794,
+     "n": 282
+    },
+    "number": {
+     "fp_rate": 0.0,
+     "n": 4
+    },
+    "objectid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "openai_api_key": {
+     "recall": 1.0,
+     "n": 300
+    },
+    "pii_email": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_name": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_phone": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_ssn": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "placeholder": {
+     "fp_rate": 0.25,
+     "n": 4
+    },
+    "placeholder_dsn": {
+     "fp_rate": 1.0,
+     "n": 1
+    },
+    "private_key_pem": {
+     "recall": 0.9892,
+     "n": 277
+    },
+    "pypi_token": {
+     "recall": 1.0,
+     "n": 141
+    },
+    "region": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "sendgrid_api_key": {
+     "recall": 0.93,
+     "n": 300
+    },
+    "sha256": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "sha512": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "shopify_token": {
+     "recall": 1.0,
+     "n": 276
+    },
+    "slack_token": {
+     "recall": 1.0,
+     "n": 285
+    },
+    "slack_webhook": {
+     "recall": 1.0,
+     "n": 293
+    },
+    "ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "stripe_secret_key": {
+     "recall": 1.0,
+     "n": 302
+    },
+    "telegram_bot_token": {
+     "recall": 0.3163,
+     "n": 294
+    },
+    "template_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "twilio_api_key": {
+     "recall": 0.7336,
+     "n": 274
+    },
+    "ulid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "uuid": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "vault_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "version": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "weak_etag": {
+     "fp_rate": 0.0,
+     "n": 1
+    }
+   }
+  },
+  "harpo dev half": {
+   "precision": 0.9365,
+   "recall": 0.7631,
+   "f1": 0.841,
+   "accuracy": 0.8062,
+   "per_tier": {
+    "T1_structured": {
+     "recall": 0.8791,
+     "n": 3514
+    },
+    "T2_generic_context": {
+     "recall": 0.7056,
+     "n": 1712
+    },
+    "T3_freeform_multilingual": {
+     "recall": 0.6606,
+     "n": 3011
+    },
+    "T4_hard_negative": {
+     "fp_rate": 0.1058,
+     "n": 4026
+    }
+   },
+   "per_language": {
+    "de": {
+     "recall": 0.533,
+     "n": 212
+    },
+    "en": {
+     "recall": 0.7643,
+     "n": 5707
+    },
+    "es": {
+     "recall": 0.8474,
+     "n": 190
+    },
+    "fr": {
+     "recall": 0.7268,
+     "n": 754
+    },
+    "it": {
+     "recall": 0.8795,
+     "n": 83
+    },
+    "ja": {
+     "recall": 0.7716,
+     "n": 324
+    },
+    "non-en": {
+     "recall": 0.8824,
+     "n": 323
+    },
+    "ru": {
+     "recall": 0.8012,
+     "n": 337
+    },
+    "zh": {
+     "recall": 0.7296,
+     "n": 307
+    }
+   },
+   "per_source": {
+    "code": {
+     "recall": 0.7587,
+     "n": 3286
+    },
+    "confluence": {
+     "recall": 0.712,
+     "n": 1337
+    },
+    "jira": {
+     "recall": 0.7805,
+     "n": 1490
+    },
+    "log": {
+     "recall": 0.7769,
+     "n": 1246
+    },
+    "slack": {
+     "recall": 0.8087,
+     "n": 878
+    }
+   },
+   "negatives": {
+    "credential_named": {
+     "fp_rate": 0.6629,
+     "n": 267
+    },
+    "other": {
+     "fp_rate": 0.0662,
+     "n": 3759
+    }
+   },
+   "per_type": {
+    "anthropic_api_key": {
+     "recall": 1.0,
+     "n": 131
+    },
+    "aws_access_key_id": {
+     "recall": 0.9408,
+     "n": 152
+    },
+    "aws_secret_access_key": {
+     "recall": 0.7474,
+     "n": 95
+    },
+    "azure_storage_key": {
+     "recall": 0.9571,
+     "n": 140
+    },
+    "basic_auth_header": {
+     "recall": 0.8625,
+     "n": 349
+    },
+    "ci_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "correlation_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "datadog_api_key": {
+     "recall": 0.6277,
+     "n": 137
+    },
+    "db_connection_string": {
+     "recall": 0.9983,
+     "n": 577
+    },
+    "digitalocean_token": {
+     "recall": 0.9274,
+     "n": 124
+    },
+    "discord_bot_token": {
+     "recall": 0.3944,
+     "n": 142
+    },
+    "env_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "fingerprint": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "gcp_api_key": {
+     "recall": 0.9867,
+     "n": 150
+    },
+    "gcp_service_account": {
+     "recall": 1.0,
+     "n": 131
+    },
+    "generic_api_key": {
+     "recall": 0.6968,
+     "n": 1603
+    },
+    "generic_high_entropy": {
+     "recall": 0.4475,
+     "n": 552
+    },
+    "generic_password": {
+     "recall": 0.5822,
+     "n": 1642
+    },
+    "github_pat_classic": {
+     "recall": 1.0,
+     "n": 128
+    },
+    "github_pat_fine_grained": {
+     "recall": 1.0,
+     "n": 103
+    },
+    "github_token_oauth": {
+     "recall": 1.0,
+     "n": 131
+    },
+    "gitlab_pat": {
+     "recall": 1.0,
+     "n": 148
+    },
+    "huggingface_token": {
+     "recall": 0.4225,
+     "n": 142
+    },
+    "iban": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "jwt": {
+     "recall": 0.9861,
+     "n": 144
+    },
+    "md5": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_aws": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_jwt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "neg_aws_arn": {
+     "fp_rate": 0.0,
+     "n": 178
+    },
+    "neg_base64_data": {
+     "fp_rate": 0.0234,
+     "n": 214
+    },
+    "neg_data_blob": {
+     "fp_rate": 0.0,
+     "n": 176
+    },
+    "neg_data_uri": {
+     "fp_rate": 0.0,
+     "n": 152
+    },
+    "neg_env_interp": {
+     "fp_rate": 0.2174,
+     "n": 23
+    },
+    "neg_example_key": {
+     "fp_rate": 0.5,
+     "n": 4
+    },
+    "neg_git_sha": {
+     "fp_rate": 0.0642,
+     "n": 296
+    },
+    "neg_hash": {
+     "fp_rate": 0.1042,
+     "n": 259
+    },
+    "neg_hash_id": {
+     "fp_rate": 0.0,
+     "n": 213
+    },
+    "neg_hex_color": {
+     "fp_rate": 0.1158,
+     "n": 285
+    },
+    "neg_jwt_shaped": {
+     "fp_rate": 0.1667,
+     "n": 90
+    },
+    "neg_k8s_id": {
+     "fp_rate": 0.0,
+     "n": 239
+    },
+    "neg_localhost_dsn": {
+     "fp_rate": 0.7363,
+     "n": 91
+    },
+    "neg_multilingual_prose": {
+     "fp_rate": 0.0,
+     "n": 25
+    },
+    "neg_natural_token": {
+     "fp_rate": 0.0729,
+     "n": 247
+    },
+    "neg_near_miss": {
+     "fp_rate": 0.4362,
+     "n": 282
+    },
+    "neg_pii": {
+     "fp_rate": 0.0486,
+     "n": 185
+    },
+    "neg_placeholder": {
+     "fp_rate": 0.3077,
+     "n": 13
+    },
+    "neg_pw_hash": {
+     "fp_rate": 0.1935,
+     "n": 93
+    },
+    "neg_sri_integrity": {
+     "fp_rate": 0.0,
+     "n": 98
+    },
+    "neg_ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 261
+    },
+    "neg_uuid": {
+     "fp_rate": 0.225,
+     "n": 280
+    },
+    "neg_version_or_id": {
+     "fp_rate": 0.0567,
+     "n": 300
+    },
+    "npm_token": {
+     "recall": 0.8904,
+     "n": 146
+    },
+    "number": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "openai_api_key": {
+     "recall": 1.0,
+     "n": 157
+    },
+    "pii_name": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_phone": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "placeholder": {
+     "fp_rate": 0.3333,
+     "n": 3
+    },
+    "private_key_pem": {
+     "recall": 0.9922,
+     "n": 129
+    },
+    "pypi_token": {
+     "recall": 1.0,
+     "n": 68
+    },
+    "region": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "sendgrid_api_key": {
+     "recall": 0.9408,
+     "n": 152
+    },
+    "shopify_token": {
+     "recall": 1.0,
+     "n": 150
+    },
+    "slack_token": {
+     "recall": 1.0,
+     "n": 132
+    },
+    "slack_webhook": {
+     "recall": 1.0,
+     "n": 146
+    },
+    "ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "stripe_secret_key": {
+     "recall": 1.0,
+     "n": 158
+    },
+    "telegram_bot_token": {
+     "recall": 0.2963,
+     "n": 135
+    },
+    "twilio_api_key": {
+     "recall": 0.7692,
+     "n": 143
+    },
+    "ulid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "uuid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "vault_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "version": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "weak_etag": {
+     "fp_rate": 0.0,
+     "n": 1
+    }
+   }
+  },
+  "harpo holdout half": {
+   "precision": 0.9343,
+   "recall": 0.7426,
+   "f1": 0.8275,
+   "accuracy": 0.7914,
+   "per_tier": {
+    "T1_structured": {
+     "recall": 0.8659,
+     "n": 3519
+    },
+    "T2_generic_context": {
+     "recall": 0.6774,
+     "n": 1807
+    },
+    "T3_freeform_multilingual": {
+     "recall": 0.637,
+     "n": 2989
+    },
+    "T4_hard_negative": {
+     "fp_rate": 0.1078,
+     "n": 4025
+    }
+   },
+   "per_language": {
+    "de": {
+     "recall": 0.5204,
+     "n": 196
+    },
+    "en": {
+     "recall": 0.7468,
+     "n": 5723
+    },
+    "es": {
+     "recall": 0.7513,
+     "n": 197
+    },
+    "fr": {
+     "recall": 0.6867,
+     "n": 782
+    },
+    "it": {
+     "recall": 0.8971,
+     "n": 68
+    },
+    "ja": {
+     "recall": 0.761,
+     "n": 364
+    },
+    "non-en": {
+     "recall": 0.8731,
+     "n": 331
+    },
+    "ru": {
+     "recall": 0.8037,
+     "n": 326
+    },
+    "zh": {
+     "recall": 0.686,
+     "n": 328
+    }
+   },
+   "per_source": {
+    "code": {
+     "recall": 0.7353,
+     "n": 3407
+    },
+    "confluence": {
+     "recall": 0.7029,
+     "n": 1306
+    },
+    "jira": {
+     "recall": 0.7487,
+     "n": 1500
+    },
+    "log": {
+     "recall": 0.7632,
+     "n": 1212
+    },
+    "slack": {
+     "recall": 0.791,
+     "n": 890
+    }
+   },
+   "negatives": {
+    "credential_named": {
+     "fp_rate": 0.6642,
+     "n": 274
+    },
+    "other": {
+     "fp_rate": 0.0672,
+     "n": 3751
+    }
+   },
+   "per_type": {
+    "anthropic_api_key": {
+     "recall": 1.0,
+     "n": 113
+    },
+    "aws_access_key_id": {
+     "recall": 0.9531,
+     "n": 128
+    },
+    "aws_secret_access_key": {
+     "recall": 0.6762,
+     "n": 105
+    },
+    "azure_storage_key": {
+     "recall": 0.9452,
+     "n": 146
+    },
+    "base64_data": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "basic_auth_header": {
+     "recall": 0.8553,
+     "n": 311
+    },
+    "bcrypt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "cli_flag": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "config": {
+     "fp_rate": 0.0,
+     "n": 3
+    },
+    "credit_card": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "data_uri": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "datadog_api_key": {
+     "recall": 0.543,
+     "n": 151
+    },
+    "db_connection_string": {
+     "recall": 0.9982,
+     "n": 566
+    },
+    "digitalocean_token": {
+     "recall": 0.9071,
+     "n": 140
+    },
+    "discord_bot_token": {
+     "recall": 0.391,
+     "n": 133
+    },
+    "env_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "example_key": {
+     "fp_rate": 1.0,
+     "n": 1
+    },
+    "gcp_api_key": {
+     "recall": 0.9653,
+     "n": 144
+    },
+    "gcp_service_account": {
+     "recall": 1.0,
+     "n": 134
+    },
+    "generic_api_key": {
+     "recall": 0.6889,
+     "n": 1633
+    },
+    "generic_high_entropy": {
+     "recall": 0.3959,
+     "n": 586
+    },
+    "generic_password": {
+     "recall": 0.5529,
+     "n": 1700
+    },
+    "git_sha": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "github_pat_classic": {
+     "recall": 1.0,
+     "n": 140
+    },
+    "github_pat_fine_grained": {
+     "recall": 1.0,
+     "n": 92
+    },
+    "github_token_oauth": {
+     "recall": 1.0,
+     "n": 139
+    },
+    "gitlab_pat": {
+     "recall": 1.0,
+     "n": 149
+    },
+    "hex_color": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "hex_colors": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "huggingface_token": {
+     "recall": 0.4895,
+     "n": 143
+    },
+    "jwt": {
+     "recall": 0.9675,
+     "n": 154
+    },
+    "k8s_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "md5": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_github": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "neg_aws_arn": {
+     "fp_rate": 0.0,
+     "n": 182
+    },
+    "neg_base64_data": {
+     "fp_rate": 0.0253,
+     "n": 237
+    },
+    "neg_data_blob": {
+     "fp_rate": 0.0,
+     "n": 184
+    },
+    "neg_data_uri": {
+     "fp_rate": 0.0,
+     "n": 148
+    },
+    "neg_env_interp": {
+     "fp_rate": 0.3226,
+     "n": 31
+    },
+    "neg_example_key": {
+     "fp_rate": 0.8,
+     "n": 5
+    },
+    "neg_git_sha": {
+     "fp_rate": 0.0358,
+     "n": 307
+    },
+    "neg_hash": {
+     "fp_rate": 0.1418,
+     "n": 275
+    },
+    "neg_hash_id": {
+     "fp_rate": 0.0,
+     "n": 207
+    },
+    "neg_hex_color": {
+     "fp_rate": 0.1241,
+     "n": 282
+    },
+    "neg_jwt_shaped": {
+     "fp_rate": 0.1667,
+     "n": 90
+    },
+    "neg_k8s_id": {
+     "fp_rate": 0.0,
+     "n": 241
+    },
+    "neg_localhost_dsn": {
+     "fp_rate": 0.7303,
+     "n": 89
+    },
+    "neg_multilingual_prose": {
+     "fp_rate": 0.0,
+     "n": 31
+    },
+    "neg_natural_token": {
+     "fp_rate": 0.0567,
+     "n": 194
+    },
+    "neg_near_miss": {
+     "fp_rate": 0.4572,
+     "n": 269
+    },
+    "neg_pii": {
+     "fp_rate": 0.0343,
+     "n": 175
+    },
+    "neg_placeholder": {
+     "fp_rate": 0.4286,
+     "n": 14
+    },
+    "neg_pw_hash": {
+     "fp_rate": 0.1724,
+     "n": 87
+    },
+    "neg_sri_integrity": {
+     "fp_rate": 0.0,
+     "n": 82
+    },
+    "neg_ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 279
+    },
+    "neg_uuid": {
+     "fp_rate": 0.2423,
+     "n": 293
+    },
+    "neg_version_or_id": {
+     "fp_rate": 0.051,
+     "n": 294
+    },
+    "npm_token": {
+     "recall": 0.8676,
+     "n": 136
+    },
+    "number": {
+     "fp_rate": 0.0,
+     "n": 3
+    },
+    "objectid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "openai_api_key": {
+     "recall": 1.0,
+     "n": 143
+    },
+    "pii_email": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_ssn": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "placeholder": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "placeholder_dsn": {
+     "fp_rate": 1.0,
+     "n": 1
+    },
+    "private_key_pem": {
+     "recall": 0.9865,
+     "n": 148
+    },
+    "pypi_token": {
+     "recall": 1.0,
+     "n": 73
+    },
+    "sendgrid_api_key": {
+     "recall": 0.9189,
+     "n": 148
+    },
+    "sha256": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "sha512": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "shopify_token": {
+     "recall": 1.0,
+     "n": 126
+    },
+    "slack_token": {
+     "recall": 1.0,
+     "n": 153
+    },
+    "slack_webhook": {
+     "recall": 1.0,
+     "n": 147
+    },
+    "stripe_secret_key": {
+     "recall": 1.0,
+     "n": 144
+    },
+    "telegram_bot_token": {
+     "recall": 0.3333,
+     "n": 159
+    },
+    "template_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "twilio_api_key": {
+     "recall": 0.6947,
+     "n": 131
+    },
+    "uuid": {
+     "fp_rate": 0.0,
+     "n": 1
+    }
+   }
+  },
+  "gitleaks 8.30.1": {
+   "precision": 0.9314,
+   "recall": 0.4135,
+   "f1": 0.5727,
+   "accuracy": 0.5849,
+   "per_tier": {
+    "T1_structured": {
+     "recall": 0.6528,
+     "n": 7033
+    },
+    "T2_generic_context": {
+     "recall": 0.3549,
+     "n": 3519
+    },
+    "T3_freeform_multilingual": {
+     "recall": 0.1673,
+     "n": 6000
+    },
+    "T4_hard_negative": {
+     "fp_rate": 0.0626,
+     "n": 8051
+    }
+   },
+   "per_language": {
+    "de": {
+     "recall": 0.3627,
+     "n": 408
+    },
+    "en": {
+     "recall": 0.3934,
+     "n": 11430
+    },
+    "es": {
+     "recall": 0.584,
+     "n": 387
+    },
+    "fr": {
+     "recall": 0.3783,
+     "n": 1536
+    },
+    "it": {
+     "recall": 0.3113,
+     "n": 151
+    },
+    "ja": {
+     "recall": 0.577,
+     "n": 688
+    },
+    "non-en": {
+     "recall": 0.7324,
+     "n": 654
+    },
+    "ru": {
+     "recall": 0.4163,
+     "n": 663
+    },
+    "zh": {
+     "recall": 0.3039,
+     "n": 635
+    }
+   },
+   "per_source": {
+    "code": {
+     "recall": 0.4055,
+     "n": 6693
+    },
+    "confluence": {
+     "recall": 0.4272,
+     "n": 2643
+    },
+    "jira": {
+     "recall": 0.4187,
+     "n": 2990
+    },
+    "log": {
+     "recall": 0.3507,
+     "n": 2458
+    },
+    "slack": {
+     "recall": 0.5017,
+     "n": 1768
+    }
+   },
+   "negatives": {
+    "credential_named": {
+     "fp_rate": 0.3734,
+     "n": 541
+    },
+    "other": {
+     "fp_rate": 0.0402,
+     "n": 7510
+    }
+   },
+   "per_type": {
+    "anthropic_api_key": {
+     "recall": 0.5,
+     "n": 244
+    },
+    "aws_access_key_id": {
+     "recall": 0.3143,
+     "n": 280
+    },
+    "aws_secret_access_key": {
+     "recall": 0.42,
+     "n": 200
+    },
+    "azure_storage_key": {
+     "recall": 0.9476,
+     "n": 286
+    },
+    "base64_data": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "basic_auth_header": {
+     "recall": 0.0955,
+     "n": 660
+    },
+    "bcrypt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "ci_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "cli_flag": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "config": {
+     "fp_rate": 0.0,
+     "n": 3
+    },
+    "correlation_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "credit_card": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "data_uri": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "datadog_api_key": {
+     "recall": 0.3264,
+     "n": 288
+    },
+    "db_connection_string": {
+     "recall": 0.042,
+     "n": 1143
+    },
+    "digitalocean_token": {
+     "recall": 0.5909,
+     "n": 264
+    },
+    "discord_bot_token": {
+     "recall": 0.3236,
+     "n": 275
+    },
+    "env_ref": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "example_key": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "fingerprint": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "gcp_api_key": {
+     "recall": 0.5306,
+     "n": 294
+    },
+    "gcp_service_account": {
+     "recall": 1.0,
+     "n": 265
+    },
+    "generic_api_key": {
+     "recall": 0.5053,
+     "n": 3236
+    },
+    "generic_high_entropy": {
+     "recall": 0.3111,
+     "n": 1138
+    },
+    "generic_password": {
+     "recall": 0.0458,
+     "n": 3342
+    },
+    "git_sha": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "github_pat_classic": {
+     "recall": 1.0,
+     "n": 268
+    },
+    "github_pat_fine_grained": {
+     "recall": 1.0,
+     "n": 195
+    },
+    "github_token_oauth": {
+     "recall": 1.0,
+     "n": 270
+    },
+    "gitlab_pat": {
+     "recall": 1.0,
+     "n": 297
+    },
+    "hex_color": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "hex_colors": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "huggingface_token": {
+     "recall": 0.3789,
+     "n": 285
+    },
+    "iban": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "jwt": {
+     "recall": 0.5705,
+     "n": 298
+    },
+    "k8s_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "md5": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "near_miss_aws": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_github": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "near_miss_jwt": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "neg_aws_arn": {
+     "fp_rate": 0.0,
+     "n": 360
+    },
+    "neg_base64_data": {
+     "fp_rate": 0.0133,
+     "n": 451
+    },
+    "neg_data_blob": {
+     "fp_rate": 0.0,
+     "n": 360
+    },
+    "neg_data_uri": {
+     "fp_rate": 0.0,
+     "n": 300
+    },
+    "neg_env_interp": {
+     "fp_rate": 0.0,
+     "n": 54
+    },
+    "neg_example_key": {
+     "fp_rate": 0.4444,
+     "n": 9
+    },
+    "neg_git_sha": {
+     "fp_rate": 0.0348,
+     "n": 603
+    },
+    "neg_hash": {
+     "fp_rate": 0.0955,
+     "n": 534
+    },
+    "neg_hash_id": {
+     "fp_rate": 0.0,
+     "n": 420
+    },
+    "neg_hex_color": {
+     "fp_rate": 0.03,
+     "n": 567
+    },
+    "neg_jwt_shaped": {
+     "fp_rate": 0.1667,
+     "n": 180
+    },
+    "neg_k8s_id": {
+     "fp_rate": 0.0,
+     "n": 480
+    },
+    "neg_localhost_dsn": {
+     "fp_rate": 0.0,
+     "n": 180
+    },
+    "neg_multilingual_prose": {
+     "fp_rate": 0.0,
+     "n": 56
+    },
+    "neg_natural_token": {
+     "fp_rate": 0.0363,
+     "n": 441
+    },
+    "neg_near_miss": {
+     "fp_rate": 0.3938,
+     "n": 551
+    },
+    "neg_pii": {
+     "fp_rate": 0.0139,
+     "n": 360
+    },
+    "neg_placeholder": {
+     "fp_rate": 0.1852,
+     "n": 27
+    },
+    "neg_pw_hash": {
+     "fp_rate": 0.0,
+     "n": 180
+    },
+    "neg_sri_integrity": {
+     "fp_rate": 0.0,
+     "n": 180
+    },
+    "neg_ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 540
+    },
+    "neg_uuid": {
+     "fp_rate": 0.2007,
+     "n": 573
+    },
+    "neg_version_or_id": {
+     "fp_rate": 0.0286,
+     "n": 594
+    },
+    "npm_token": {
+     "recall": 0.5496,
+     "n": 282
+    },
+    "number": {
+     "fp_rate": 0.0,
+     "n": 4
+    },
+    "objectid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "openai_api_key": {
+     "recall": 0.3433,
+     "n": 300
+    },
+    "pii_email": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_name": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_phone": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "pii_ssn": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "placeholder": {
+     "fp_rate": 0.0,
+     "n": 4
+    },
+    "placeholder_dsn": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "private_key_pem": {
+     "recall": 0.7906,
+     "n": 277
+    },
+    "pypi_token": {
+     "recall": 1.0,
+     "n": 141
+    },
+    "region": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "sendgrid_api_key": {
+     "recall": 0.5833,
+     "n": 300
+    },
+    "sha256": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "sha512": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "shopify_token": {
+     "recall": 1.0,
+     "n": 276
+    },
+    "slack_token": {
+     "recall": 0.7474,
+     "n": 285
+    },
+    "slack_webhook": {
+     "recall": 1.0,
+     "n": 293
+    },
+    "ssh_pubkey": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "stripe_secret_key": {
+     "recall": 0.5927,
+     "n": 302
+    },
+    "telegram_bot_token": {
+     "recall": 0.1463,
+     "n": 294
+    },
+    "template_id": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "twilio_api_key": {
+     "recall": 0.5876,
+     "n": 274
+    },
+    "ulid": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "uuid": {
+     "fp_rate": 0.0,
+     "n": 2
+    },
+    "vault_ref": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "version": {
+     "fp_rate": 0.0,
+     "n": 1
+    },
+    "weak_etag": {
+     "fp_rate": 0.0,
+     "n": 1
+    }
+   }
+  }
+ }
+}
