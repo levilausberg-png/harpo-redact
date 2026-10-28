@@ -1,0 +1,6 @@
+{
+  "name": "harpo-redact-examples",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@ai-sdk/openai": "^2", "@anthropic-ai/sdk": "^0", "ai": "^5", "openai": "^5" }
+}

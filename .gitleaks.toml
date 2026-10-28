@@ -1,0 +1,14 @@
+# gitleaks for this repository: CI scans the tree and the whole history on every push (.github/workflows/ci.yml).
+# Harpo's tests are full of invented, secret-shaped values on purpose; they are allowed below, by path and by value.
+# Anything else gitleaks finds fails the build.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Invented test data: LeakBench's attack corpus, one sample per credential rule, and the test suite"
+paths = ['''(^|/)tests/''', '''(^|/)bench/leakbench/''']
+
+[[allowlists]]
+description = "Invented keys the console's sample prompts, the live self-test and the README's before-and-after example use: they must look real"
+regexTarget = "match"
+regexes = ['''AKIAZ4X7Q2LMWN3RT5PJ''', '''ghp_R8xV2mQ9tL4wK7nB3cY6hJ1sD5fG0aZ2eU8i''', '''DATABASE_PASSWORD=Qz7vL2mX9pR4tW8k''', '''sk-proj-Qz7vL2mX9pR4tW8kH3nB6yC1dF5gJ0aE''']

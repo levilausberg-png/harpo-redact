@@ -1,0 +1,126 @@
+# The package contract: what `pip install .`, `pip install -e .` and `python -m build` read. Reproducible environments
+# come from the hash-pinned lock files (requirements*.lock; CONTRIBUTING.md), which install exactly these pins.
+[build-system]
+requires = ["setuptools>=77"]  # 70.1 and later build wheels themselves: no separate wheel package
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harpo-redact"
+version = "2.5.0"
+description = "Harpo: a self-hosted privacy firewall that redacts personal data and secrets before prompts reach an LLM."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "The Harpo authors" }]
+keywords = ["privacy", "redaction", "pii", "dlp", "secrets", "llm", "ai-gateway", "proxy", "openai", "anthropic"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Framework :: FastAPI",
+  "Topic :: Security",
+  "Topic :: Internet :: Proxy Servers",
+  "Typing :: Typed",
+]
+dependencies = [
+  "fastapi==0.142.2",
+  "starlette==1.7.0",
+  "uvicorn[standard]==0.54.0",
+  "httpx==0.28.1",
+  "pydantic==2.13.5",
+  "pydantic-settings==2.15.0",
+  "PyYAML==6.0.3",
+  "spacy==3.8.16",
+  "phonenumbers==9.0.40",
+  "python-stdnum==2.2",
+  "prometheus-client==0.26.0",
+  "google-re2==1.1.20251105",
+  "lxml==6.1.3",
+  "pypdfium2==5.6.0",
+  "Pillow==13.0.0",
+]
+
+[project.optional-dependencies]
+# For contributors: `pip install -e ".[dev]"`. The same pins as requirements-dev.in, from which requirements-dev.lock
+# is compiled with hashes (tests/test_release_gates.py keeps the two in step).
+dev = [
+  "pytest==9.1.1",
+  "pytest-asyncio==1.4.0",
+  "hypothesis==6.168.3",
+  "ruff==0.16.10",
+  "mypy==2.3.1",
+  "bandit==1.9.4",
+  "pip-audit==2.10.1",
+  "types-PyYAML",
+  "python-docx==1.2.0",
+  "openpyxl==3.1.5",
+  "python-pptx==1.0.2",
+  "reportlab==4.4.10",
+  "rstr==3.2.2",
+  "playwright==1.56.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/levilausberg-png/harpo-redact"
+Documentation = "https://github.com/levilausberg-png/harpo-redact/blob/main/docs/GUIDE.md"
+Changelog = "https://github.com/levilausberg-png/harpo-redact/blob/main/docs/CHANGELOG.md"
+Issues = "https://github.com/levilausberg-png/harpo-redact/issues"
+Security = "https://github.com/levilausberg-png/harpo-redact/blob/main/SECURITY.md"
+
+[project.scripts]
+harpo = "harpo_redact.__main__:main"
+harpo-redact = "harpo_redact.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+harpo_redact = ["py.typed", "console/*", "console/**/*", "data/*"]  # py.typed: the SDK's types reach your type checker
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-q"
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient` is deprecated"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF", "ASYNC", "PERF"]
+ignore = ["RUF001", "RUF002", "RUF003", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+# The launcher starts the gateway, pip and Ollama (fixed argument lists, no shell) and calls localhost over http.
+"src/harpo_redact/launcher.py" = ["S603", "S607", "S310"]
+"tests/*" = ["S", "B011", "PERF", "E501"]
+# Benchmarks and generators hold data tables (names, templates, catalogue entries) one entry per line.
+"bench/*" = ["S", "T20", "E501"]
+"tools/*" = ["E501"]
+# Word lists and patterns in Chinese, Japanese and Korean: each of their characters is two columns wide.
+"src/harpo_redact/detectors/cjk.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["harpo_redact"]
+mypy_path = "src"
+warn_unused_ignores = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["spacy", "spacy.*", "stdnum", "stdnum.*", "phonenumbers", "phonenumbers.*", "prometheus_client.*"]
+ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "bench"]
+
+[[tool.mypy.overrides]]
+module = ["re2", "re2.*", "lxml", "lxml.*", "pypdfium2", "pypdfium2.*"]
+ignore_missing_imports = true

@@ -1,0 +1,631 @@
+{
+ "dataset": "openpii",
+ "file": "validation.jsonl",
+ "file_sha256": "c2175f3146a8afd658f3540f3db3c8ea0fb73ab6fe206bfff1579361b1627e5b",
+ "documents": 10000,
+ "limit": null,
+ "half": null,
+ "config": "default-image",
+ "harpo": {
+  "version": "2.4.0",
+  "package_sha256": "81600d74853bdedaf4e666eb59d66bd0ec7317b046f179e09d547b67732bdd91",
+  "python": "3.12.13",
+  "models": {
+   "en_core_web_sm": "3.8.0",
+   "de_core_news_sm": "3.8.0",
+   "xx_ent_wiki_sm": "3.8.0",
+   "spacy": "3.8.16"
+  },
+  "cpus": 2
+ },
+ "scope_sha256": "e4f5161128b412a86f101dbc0bf94be72fd2dd9fa21226712188c2a13b625ddf",
+ "harness_sha256": "ce86f04686e61419889878400d85887a71aca1df6c2dcb3d401d8f6970939f9e",
+ "started": "2026-10-20T18:57:12+00:00",
+ "seconds": 94.2,
+ "metrics": {
+  "documents": 10000,
+  "in_scope": {
+   "spans": 51953,
+   "redacted": 39880,
+   "blocked": 0,
+   "partial": 1203,
+   "leaked": 10870,
+   "recall": 0.7676,
+   "recall_any": 0.7908
+  },
+  "all_labels": {
+   "spans": 72597,
+   "redacted": 43926,
+   "blocked": 0,
+   "partial": 1434,
+   "leaked": 27237,
+   "recall": 0.6051,
+   "recall_any": 0.6248
+  },
+  "out_of_scope": {
+   "spans": 20644,
+   "redacted": 4046,
+   "blocked": 0,
+   "partial": 231,
+   "leaked": 16367,
+   "recall": 0.196,
+   "recall_any": 0.2072
+  },
+  "unmapped": {
+   "spans": 0,
+   "redacted": 0,
+   "blocked": 0,
+   "partial": 0,
+   "leaked": 0,
+   "recall": null,
+   "recall_any": null
+  },
+  "unmapped_labels": [],
+  "per_label": {
+   "AGE": {
+    "spans": 3566,
+    "redacted": 7,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 3559,
+    "recall": 0.002,
+    "recall_any": 0.002,
+    "scope": "out"
+   },
+   "AMOUNT": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "out"
+   },
+   "BANKNAME": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "in"
+   },
+   "BUILDINGNUM": {
+    "spans": 3450,
+    "redacted": 2080,
+    "blocked": 0,
+    "partial": 21,
+    "leaked": 1349,
+    "recall": 0.6029,
+    "recall_any": 0.609,
+    "scope": "in"
+   },
+   "CITY": {
+    "spans": 5075,
+    "redacted": 3868,
+    "blocked": 0,
+    "partial": 534,
+    "leaked": 673,
+    "recall": 0.7622,
+    "recall_any": 0.8674,
+    "scope": "in"
+   },
+   "COUNTRY": {
+    "spans": 1,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1,
+    "recall": 0.0,
+    "recall_any": 0.0,
+    "scope": "in"
+   },
+   "CREDITCARDNUMBER": {
+    "spans": 2267,
+    "redacted": 1053,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 1213,
+    "recall": 0.4645,
+    "recall_any": 0.4649,
+    "scope": "in"
+   },
+   "DATE": {
+    "spans": 8572,
+    "redacted": 569,
+    "blocked": 0,
+    "partial": 173,
+    "leaked": 7830,
+    "recall": 0.0664,
+    "recall_any": 0.0866,
+    "scope": "out"
+   },
+   "DRIVERLICENSENUM": {
+    "spans": 2001,
+    "redacted": 1167,
+    "blocked": 0,
+    "partial": 18,
+    "leaked": 816,
+    "recall": 0.5832,
+    "recall_any": 0.5922,
+    "scope": "in"
+   },
+   "EMAIL": {
+    "spans": 5427,
+    "redacted": 5323,
+    "blocked": 0,
+    "partial": 102,
+    "leaked": 2,
+    "recall": 0.9808,
+    "recall_any": 0.9996,
+    "scope": "in"
+   },
+   "GENDER": {
+    "spans": 1903,
+    "redacted": 794,
+    "blocked": 0,
+    "partial": 31,
+    "leaked": 1078,
+    "recall": 0.4172,
+    "recall_any": 0.4335,
+    "scope": "out"
+   },
+   "GIVENNAME": {
+    "spans": 8489,
+    "redacted": 7501,
+    "blocked": 0,
+    "partial": 108,
+    "leaked": 880,
+    "recall": 0.8836,
+    "recall_any": 0.8963,
+    "scope": "in"
+   },
+   "IDCARDNUM": {
+    "spans": 2337,
+    "redacted": 1278,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 1058,
+    "recall": 0.5469,
+    "recall_any": 0.5473,
+    "scope": "in"
+   },
+   "ORGANISATION": {
+    "spans": 3,
+    "redacted": 1,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 2,
+    "recall": 0.3333,
+    "recall_any": 0.3333,
+    "scope": "in"
+   },
+   "PASSPORTNUM": {
+    "spans": 1391,
+    "redacted": 713,
+    "blocked": 0,
+    "partial": 2,
+    "leaked": 676,
+    "recall": 0.5126,
+    "recall_any": 0.514,
+    "scope": "in"
+   },
+   "SEX": {
+    "spans": 1773,
+    "redacted": 352,
+    "blocked": 0,
+    "partial": 0,
+    "leaked": 1421,
+    "recall": 0.1985,
+    "recall_any": 0.1985,
+    "scope": "out"
+   },
+   "SOCIALNUM": {
+    "spans": 1745,
+    "redacted": 1029,
+    "blocked": 0,
+    "partial": 18,
+    "leaked": 698,
+    "recall": 0.5897,
+    "recall_any": 0.6,
+    "scope": "in"
+   },
+   "STREET": {
+    "spans": 3486,
+    "redacted": 2688,
+    "blocked": 0,
+    "partial": 223,
+    "leaked": 575,
+    "recall": 0.7711,
+    "recall_any": 0.8351,
+    "scope": "in"
+   },
+   "SURNAME": {
+    "spans": 7287,
+    "redacted": 6579,
+    "blocked": 0,
+    "partial": 120,
+    "leaked": 588,
+    "recall": 0.9028,
+    "recall_any": 0.9193,
+    "scope": "in"
+   },
+   "TAXNUM": {
+    "spans": 1850,
+    "redacted": 1227,
+    "blocked": 0,
+    "partial": 1,
+    "leaked": 622,
+    "recall": 0.6632,
+    "recall_any": 0.6638,
+    "scope": "in"
+   },
+   "TELEPHONENUM": {
+    "spans": 3998,
+    "redacted": 3215,
+    "blocked": 0,
+    "partial": 48,
+    "leaked": 735,
+    "recall": 0.8042,
+    "recall_any": 0.8162,
+    "scope": "in"
+   },
+   "TIME": {
+    "spans": 124,
+    "redacted": 0,
+    "blocked": 0,
+    "partial": 3,
+    "leaked": 121,
+    "recall": 0.0,
+    "recall_any": 0.0242,
+    "scope": "out"
+   },
+   "TITLE": {
+    "spans": 4705,
+    "redacted": 2324,
+    "blocked": 0,
+    "partial": 24,
+    "leaked": 2357,
+    "recall": 0.4939,
+    "recall_any": 0.499,
+    "scope": "out"
+   },
+   "ZIPCODE": {
+    "spans": 3145,
+    "redacted": 2158,
+    "blocked": 0,
+    "partial": 6,
+    "leaked": 981,
+    "recall": 0.6862,
+    "recall_any": 0.6881,
+    "scope": "in"
+   }
+  },
+  "unlocated_values": 0,
+  "blocked_documents": 0,
+  "block_reasons": {},
+  "errors": {},
+  "unplaced_findings": 0,
+  "by_language": {
+   "bg": {
+    "spans": 1489,
+    "redacted": 1016,
+    "blocked": 0,
+    "partial": 66,
+    "leaked": 407,
+    "recall": 0.6823,
+    "recall_any": 0.7267
+   },
+   "cs": {
+    "spans": 1340,
+    "redacted": 1010,
+    "blocked": 0,
+    "partial": 46,
+    "leaked": 284,
+    "recall": 0.7537,
+    "recall_any": 0.7881
+   },
+   "da": {
+    "spans": 1385,
+    "redacted": 1046,
+    "blocked": 0,
+    "partial": 14,
+    "leaked": 325,
+    "recall": 0.7552,
+    "recall_any": 0.7653
+   },
+   "de": {
+    "spans": 3444,
+    "redacted": 2740,
+    "blocked": 0,
+    "partial": 66,
+    "leaked": 638,
+    "recall": 0.7956,
+    "recall_any": 0.8148
+   },
+   "el": {
+    "spans": 1430,
+    "redacted": 978,
+    "blocked": 0,
+    "partial": 23,
+    "leaked": 429,
+    "recall": 0.6839,
+    "recall_any": 0.7
+   },
+   "en": {
+    "spans": 7137,
+    "redacted": 5672,
+    "blocked": 0,
+    "partial": 128,
+    "leaked": 1337,
+    "recall": 0.7947,
+    "recall_any": 0.8127
+   },
+   "es": {
+    "spans": 2806,
+    "redacted": 2440,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 326,
+    "recall": 0.8696,
+    "recall_any": 0.8838
+   },
+   "et": {
+    "spans": 1491,
+    "redacted": 1072,
+    "blocked": 0,
+    "partial": 48,
+    "leaked": 371,
+    "recall": 0.719,
+    "recall_any": 0.7512
+   },
+   "fi": {
+    "spans": 1488,
+    "redacted": 1174,
+    "blocked": 0,
+    "partial": 26,
+    "leaked": 288,
+    "recall": 0.789,
+    "recall_any": 0.8065
+   },
+   "fr": {
+    "spans": 4272,
+    "redacted": 3428,
+    "blocked": 0,
+    "partial": 44,
+    "leaked": 800,
+    "recall": 0.8024,
+    "recall_any": 0.8127
+   },
+   "hr": {
+    "spans": 1406,
+    "redacted": 1094,
+    "blocked": 0,
+    "partial": 47,
+    "leaked": 265,
+    "recall": 0.7781,
+    "recall_any": 0.8115
+   },
+   "hu": {
+    "spans": 1330,
+    "redacted": 923,
+    "blocked": 0,
+    "partial": 33,
+    "leaked": 374,
+    "recall": 0.694,
+    "recall_any": 0.7188
+   },
+   "id": {
+    "spans": 911,
+    "redacted": 745,
+    "blocked": 0,
+    "partial": 26,
+    "leaked": 140,
+    "recall": 0.8178,
+    "recall_any": 0.8463
+   },
+   "it": {
+    "spans": 2966,
+    "redacted": 2258,
+    "blocked": 0,
+    "partial": 66,
+    "leaked": 642,
+    "recall": 0.7613,
+    "recall_any": 0.7835
+   },
+   "ja": {
+    "spans": 832,
+    "redacted": 491,
+    "blocked": 0,
+    "partial": 69,
+    "leaked": 272,
+    "recall": 0.5901,
+    "recall_any": 0.6731
+   },
+   "ko": {
+    "spans": 771,
+    "redacted": 525,
+    "blocked": 0,
+    "partial": 22,
+    "leaked": 224,
+    "recall": 0.6809,
+    "recall_any": 0.7095
+   },
+   "lt": {
+    "spans": 1420,
+    "redacted": 1059,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 321,
+    "recall": 0.7458,
+    "recall_any": 0.7739
+   },
+   "lv": {
+    "spans": 1433,
+    "redacted": 990,
+    "blocked": 0,
+    "partial": 58,
+    "leaked": 385,
+    "recall": 0.6909,
+    "recall_any": 0.7313
+   },
+   "ms": {
+    "spans": 834,
+    "redacted": 622,
+    "blocked": 0,
+    "partial": 23,
+    "leaked": 189,
+    "recall": 0.7458,
+    "recall_any": 0.7734
+   },
+   "nl": {
+    "spans": 1477,
+    "redacted": 1200,
+    "blocked": 0,
+    "partial": 15,
+    "leaked": 262,
+    "recall": 0.8125,
+    "recall_any": 0.8226
+   },
+   "pl": {
+    "spans": 1475,
+    "redacted": 1180,
+    "blocked": 0,
+    "partial": 25,
+    "leaked": 270,
+    "recall": 0.8,
+    "recall_any": 0.8169
+   },
+   "pt": {
+    "spans": 1417,
+    "redacted": 1124,
+    "blocked": 0,
+    "partial": 18,
+    "leaked": 275,
+    "recall": 0.7932,
+    "recall_any": 0.8059
+   },
+   "ro": {
+    "spans": 1395,
+    "redacted": 1126,
+    "blocked": 0,
+    "partial": 31,
+    "leaked": 238,
+    "recall": 0.8072,
+    "recall_any": 0.8294
+   },
+   "sk": {
+    "spans": 1428,
+    "redacted": 1093,
+    "blocked": 0,
+    "partial": 22,
+    "leaked": 313,
+    "recall": 0.7654,
+    "recall_any": 0.7808
+   },
+   "sl": {
+    "spans": 1431,
+    "redacted": 1008,
+    "blocked": 0,
+    "partial": 59,
+    "leaked": 364,
+    "recall": 0.7044,
+    "recall_any": 0.7456
+   },
+   "sr": {
+    "spans": 1353,
+    "redacted": 1014,
+    "blocked": 0,
+    "partial": 25,
+    "leaked": 314,
+    "recall": 0.7494,
+    "recall_any": 0.7679
+   },
+   "sv": {
+    "spans": 1312,
+    "redacted": 983,
+    "blocked": 0,
+    "partial": 29,
+    "leaked": 300,
+    "recall": 0.7492,
+    "recall_any": 0.7713
+   },
+   "tl": {
+    "spans": 885,
+    "redacted": 681,
+    "blocked": 0,
+    "partial": 22,
+    "leaked": 182,
+    "recall": 0.7695,
+    "recall_any": 0.7944
+   },
+   "vi": {
+    "spans": 885,
+    "redacted": 697,
+    "blocked": 0,
+    "partial": 40,
+    "leaked": 148,
+    "recall": 0.7876,
+    "recall_any": 0.8328
+   },
+   "zh": {
+    "spans": 710,
+    "redacted": 491,
+    "blocked": 0,
+    "partial": 32,
+    "leaked": 187,
+    "recall": 0.6915,
+    "recall_any": 0.7366
+   }
+  },
+  "by_half": {
+   "dev": {
+    "spans": 26070,
+    "redacted": 20062,
+    "blocked": 0,
+    "partial": 573,
+    "leaked": 5435,
+    "recall": 0.7695,
+    "recall_any": 0.7915
+   },
+   "holdout": {
+    "spans": 25883,
+    "redacted": 19818,
+    "blocked": 0,
+    "partial": 630,
+    "leaked": 5435,
+    "recall": 0.7657,
+    "recall_any": 0.79
+   }
+  },
+  "collateral": {
+   "chars_outside_gold": 2047459,
+   "redacted_outside_gold": 103842,
+   "rate": 0.0507,
+   "by_type": {
+    "PERSON": 56459,
+    "ORGANIZATION": 25415,
+    "LOCATION": 14865,
+    "ADDRESS": 5585,
+    "EMAIL": 979,
+    "ACCOUNT_ID": 173,
+    "PHONE": 142,
+    "ID_DOCUMENT": 122,
+    "NATIONAL_ID": 54,
+    "SECRET": 23,
+    "CREDIT_CARD": 10,
+    "UK_NINO": 9,
+    "DEVICE_ID": 6
+   }
+  },
+  "latency_ms": {
+   "p50": 14.32,
+   "p95": 36.13,
+   "p99": 55.42,
+   "max": 243.17,
+   "mean_chars": 334
+  }
+ }
+}

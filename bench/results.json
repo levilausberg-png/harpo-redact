@@ -1,0 +1,87 @@
+{
+  "machine": {
+    "python": "3.12.3",
+    "cpu_count": 1,
+    "platform": "Linux-6.18.44-fc-v70-x86_64-with-glibc2.39"
+  },
+  "runs": 200,
+  "rows": [
+    {
+      "size": 1024,
+      "layers": "deterministic only",
+      "p50": 3.31,
+      "p95": 4.53,
+      "mean": 3.52
+    },
+    {
+      "size": 1024,
+      "layers": "deterministic + NER (sm)",
+      "p50": 17.9,
+      "p95": 23.6,
+      "mean": 17.95
+    },
+    {
+      "size": 1024,
+      "layers": "proxy overhead (full path)",
+      "p50": 22.03,
+      "p95": 35.41,
+      "mean": 24.43
+    },
+    {
+      "size": 4096,
+      "layers": "deterministic only",
+      "p50": 10.41,
+      "p95": 13.64,
+      "mean": 10.31
+    },
+    {
+      "size": 4096,
+      "layers": "deterministic + NER (sm)",
+      "p50": 58.31,
+      "p95": 72.48,
+      "mean": 57.55
+    },
+    {
+      "size": 4096,
+      "layers": "proxy overhead (full path)",
+      "p50": 66.77,
+      "p95": 95.06,
+      "mean": 71.49
+    },
+    {
+      "size": 16384,
+      "layers": "deterministic only",
+      "p50": 40.6,
+      "p95": 58.33,
+      "mean": 43.3
+    },
+    {
+      "size": 16384,
+      "layers": "deterministic + NER (sm)",
+      "p50": 219.88,
+      "p95": 273.26,
+      "mean": 220.96
+    },
+    {
+      "size": 16384,
+      "layers": "proxy overhead (full path)",
+      "p50": 228.17,
+      "p95": 277.2,
+      "mean": 231.26
+    },
+    {
+      "size": 4096,
+      "layers": "10-turn chat, no cache",
+      "p50": 31.54,
+      "p95": 34.69,
+      "mean": 31.86
+    },
+    {
+      "size": 4096,
+      "layers": "10-turn chat, NER cache",
+      "p50": 11.26,
+      "p95": 15.83,
+      "mean": 11.81
+    }
+  ]
+}

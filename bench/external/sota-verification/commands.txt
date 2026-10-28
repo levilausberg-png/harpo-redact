@@ -1,0 +1,35 @@
+# The SOTA verification pass for Harpo hardening-3, as run on 2026-10-20. Paths: S is the session's scratch folder
+# (outside the repository), V is this folder. Nothing here changes Harpo; the build is the frozen wheel.
+S=/path/to/scratch   # the machine's own path, left out of the repository
+V=bench/external/sota-verification
+PY=$S/ext/hardened3/venv/bin/python   # hardening-3 wheel installed (not editable) into a copy of the baseline env
+
+# Phase 1: provenance (package digest 81600d74853bdeda..., dependencies, models, data and scorer hashes)
+env -u PYTHONPATH $PY $V/provenance.py --out $V/environment/provenance.json \
+  --file prowlbench=$S/ext/data/prowlbench/prowlbench.jsonl --file openpii=$S/ext/data/up1/validation.jsonl \
+  --file nemotron=$S/ext/data/up2/test-00000-of-00001.parquet --prowl-repo $S/ext/data/prowlbench \
+  --gitleaks $S/scan/bin/gitleaks --wheel $S/ext/hardened3/dist/harpo_redact-2.4.0-py3-none-any.whl \
+  --archive $S/rel7/harpo-redact-hardening-3.zip
+
+# Phase 2: ProwlBench through its own run_prowlbench.py (a copy of the checkout at 53d6fc1), Harpo and gitleaks 8.30.1
+env -u PYTHONPATH TMPDIR=$S/sota/tmp $PY $V/prowl_native.py --prowl-repo $S/ext/data/prowlbench \
+  --work $S/sota/prowl_work --gitleaks $S/scan/bin/gitleaks --out $V/prowl_result.json
+git -C $S/ext/data/prowlbench ls-remote origin          # upstream HEAD on the day: 53d6fc1 (unchanged)
+
+# Phases 3 and 4, the native PIIMB run (needs the PIIMB repository, which this workspace cannot download):
+#   PIIMB=<checkout of huggingface.co/datasets/piimb/pii-masking-benchmark at 7d797b9>
+#   env -u PYTHONPATH $PY $V/piimb_harpo.py official --piimb-repo $PIIMB \
+#     --tasks ai4privacy-en ai4privacy-multi nemotron-pii gretel privy mapa-eur-lex \
+#     --predictions $S/sota/predictions/piimb --out $S/sota/piimb_official.json
+# Not run: see README.md.
+
+# Indication only, NOT the native score: PIIMB's metric re-implemented, on the local files (other samples, whole
+# documents instead of PIIMB's sentences, OpenPII micro-100k instead of OpenPII 1M)
+env -u PYTHONPATH $PY $V/piimb_harpo.py indicative --dataset openpii --file $S/ext/data/up1/validation.jsonl \
+  --predictions $S/sota/predictions --out $S/sota/indicative/openpii.json
+env -u PYTHONPATH $PY $V/piimb_harpo.py indicative --dataset nemotron \
+  --file $S/ext/data/up2/test-00000-of-00001.parquet --predictions $S/sota/predictions \
+  --out $S/sota/indicative/nemotron.json
+
+# Leaderboards: ProwlBench from the checkout (README section 5, prowlbench_leaderboard.json); PIIMB from the
+# Space's Gradio /config (web fetch), spot-checked against raw files of piimb/pii-masking-benchmark-results.

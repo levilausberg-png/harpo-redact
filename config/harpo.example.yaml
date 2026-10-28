@@ -1,0 +1,171 @@
+# Harpo production configuration (reference).
+# Every key is optional except auth.keys and upstreams; unknown keys are rejected.
+# Environment variables override this file: HARPO_<SECTION>__<KEY>, e.g. HARPO_SERVER__PORT=9000.
+environment: production          # production turns on the startup guards
+
+server:
+  host: 0.0.0.0                  # inside the container; publish the port on an internal interface only
+  port: 8080
+  workers: 2                     # one spaCy model per worker (~150 MB each with en_core_web_sm)
+  max_body_bytes: 2000000        # 413 above this
+  max_messages: 256
+  max_total_chars: 200000        # sum of all text fields in one request
+  max_scan_ms: 15000             # scan budget; past it the request is blocked, never sent half-inspected
+  max_decoded_bytes: 4000000     # base64 and similar payloads decoded for one request
+  max_entities: 20000            # raw detections in one request
+  max_concurrent_scans: 8        # per worker; further requests wait
+  console: true                  # the redaction console at /
+  metrics: true                  # /metrics; restrict to the monitoring network
+  hsts: true                     # only when clients reach the gateway over TLS
+  allowed_hosts: ["ai-gateway.internal", "127.0.0.1"]   # keep 127.0.0.1 for the container healthcheck
+  # tls_certfile: /run/secrets/tls.crt   # or terminate TLS at your ingress
+  # tls_keyfile: /run/secrets/tls.key
+
+auth:
+  enabled: true
+  keys:                          # create with: harpo hash-key --id <team>
+    - id: support-team
+      sha256: b84cf8428b227295cc1bd7f41f2deaecf9a4619c51764ece49edfaf40360990d   # example only: replace with your own hash-key output
+      can_override: false        # true lets this key send overridable blocks as placeholders
+      # expires_at: 2027-01-31T00:00:00Z   # refused after this moment (timezone required)
+      # requests_per_minute: 600           # per gateway process
+
+policy:
+  live_file: policy.live.yaml    # the console's Policy page saves here, next to this file; unset: read-only page
+  default_mode: relational       # relational | generic
+  context_repair: false          # generic mode only: [PERSON_A]/[PERSON_B] inside a sentence
+  client_may_choose_mode: true   # honour X-Harpo-Mode and X-Harpo-Context-Repair
+  rot_threshold: 0.35            # yellow when this share of outgoing words are placeholders
+  rot_min_words: 12
+  unsupported_content: block     # block | drop (images, audio, binary files)
+  override: listed_keys          # any_key | listed_keys (keys with can_override) | never
+  unknown_fields: reject         # reject | pass (scan as text): anything an adapter does not inspect, at any depth
+  remote_mcp: block              # block | allow: Anthropic mcp_servers (provider connects with your token)
+  egress_verification: full      # full | off: rescan the whole sanitized body before it leaves (INV-01)
+  response_scan: "off"           # "off" (quoted: YAML reads a bare off as false) | report | redact: deterministic check of non-streamed provider answers
+  allow_terms: [OpenAI, Anthropic, Gemini, Python, Kubernetes]
+  entities:                      # redact | block | allow; unlisted types keep their defaults (redact, dates allow)
+    # PRIVATE_KEY and SECRET are not listed: keys are always redacted, and the request goes on (INV-11).
+    US_SSN: {action: block, overridable: true}
+    ORGANIZATION: {action: redact}
+    DATE: {action: allow}        # set redact for HIPAA Safe Harbor style de-identification
+
+documents:
+  enabled: true                  # POST /v1/documents/redact and the redact-file command
+  in_chat: false                 # true: files attached to chat requests are redacted and sent as text (otherwise blocked)
+  formats: [pdf, docx, xlsx, pptx, text]
+  images: block                  # block | blank: pictures and scanned pages cannot be inspected
+  max_bytes: 20000000
+  max_chars: 1000000
+  max_pages: 150
+  max_segments: 50000            # spreadsheet cells and paragraphs; above this a file is refused, not truncated
+  pdf_dpi: 150
+  worker_memory_mb: 768          # added to what the worker already uses
+  worker_cpu_s: 60
+  timeout_s: 120
+  max_concurrent: 2              # more are queued (up to 4x this), then turned away with 503
+
+detection:
+  phone_regions: [US, GB, NL, DE]
+  encoded_max_depth: 2
+  registry:                      # protected terms: placeholders [PROTECTED_TERM_1]
+    terms: ["Project Bluefin", "prod-db-01.corp.example"]
+    patterns: ['\bCUST-\d{8}\b']
+  custom_types:                  # your own types, each with its own placeholder name and action
+    - name: EMPLOYEE_ID          # [EMPLOYEE_ID_1], [EMPLOYEE_ID_2], ...
+      description: Staff numbers from HR
+      patterns: ['\bEMP-\d{6}\b']   # RE2 (linear time); terms: [...] for exact words in any case
+      action: redact             # redact | block | allow (switched off)
+  secrets:                       # keys are always found and always redacted: 221 gitleaks rules plus prompt rules
+    extra_rules_file: null       # e.g. config/our-keys.toml: more key formats in gitleaks TOML, checked at startup
+  # The detection library: every detector under the kind of data it protects (docs/LIBRARY.md). `harpo check-config`
+  # lists what is on; the console's Policy page switches the families below without a restart. Credentials and the
+  # core validated patterns (e-mail, phone, card, IBAN, SSN/BSN/NINO, IP) are not switched here: keys are always
+  # redacted, and a core type is stopped with its action in the policy (allow).
+  identifiers:
+    # Identity numbers
+    national_ids: true           # checked national and tax IDs: 17 schemes in 14 countries
+    cued_numbers: true           # any value named by the word in front of it, in 30+ languages
+    opaque_codes: true           # codes no language writes, in a sentence: "FXJPIUZXKH", "BfnMnQaGjPdc"
+    regions:                     # region packs: formats a country or the EU writes its own way, found without a cue
+      nl: true                   # btw-identificatienummer (both checksums), loonheffingennummer
+      us: true                   # masked SSNs and their last four, ATIN, Medicare MBI, USCIS receipt, A-Number, I-94
+      eu: true                   # VAT numbers of every member state, BIC after its cue, EU COVID certificate ids
+    # Forms, tables and fields
+    table_fields: true           # values under a CSV/Markdown/HTML column, "Label: value" lines, JSON keys in text
+    # Addresses and places
+    addresses: true              # street addresses in 30+ languages, postcodes, PO boxes, CJK address units
+    # Devices, networks and machine formats
+    devices: true                # MAC, IMEI, VIN, serial numbers
+    machine_formats: true        # passport MRZ, HL7, AWS identities, user names in logs and paths
+    # Crypto
+    crypto: true                 # Bitcoin and Ethereum addresses
+    # Hidden and encoded text
+    spoken_emails: true          # "jane at example dot com"
+    decode_escapes: true         # %40, &#64;, \u0040: always on (a key written with escapes is still a key)
+  ner:
+    enabled: true
+    model: en_core_web_sm        # English text, and text too short to tell; en_core_web_lg/_trf for higher recall
+    language_models:             # see docs/LEAKBENCH.md for the measured effect
+      de: de_core_news_sm        # MIT, in the Docker image
+      other: xx_ent_wiki_sm      # MIT, in the Docker image: every other language and script
+      # nl: nl_core_news_sm      # CC BY-SA 4.0  ┐ opt-in: docker build --build-arg EXTRA_NER_MODELS="nl fr es"
+      # fr: fr_core_news_sm      # LGPL-LR       │ (check their licences before you distribute them)
+      # es: es_core_news_sm      # GNU GPL 3.0   ┘
+    other_languages: english     # a detected language without a model: english (recall first) or skip (precision)
+    propagate: true              # a name or place found once is redacted wherever else it occurs
+    name_rules: true             # greetings, titles, sign-offs, signatures, CJK honorifics and family names
+    precision_filter: true       # drop what the model tags that cannot be a name (common words, labels, keywords)
+    cache_entries: 10000         # reuse results for resent chat history; 0 turns it off
+    cache_ttl_s: 900
+  slm:
+    enabled: false               # set true with the Ollama sidecar (docker compose --profile slm)
+    base_url: http://ollama:11434
+    model: llama3.2:3b
+    timeout_ms: 3000
+    on_failure: fail_closed      # fail_closed (red) | degrade (yellow, deterministic layers only)
+    max_input_chars: 50000       # more text than this is "over_budget", handled like any SLM failure
+    # model_digest: sha256:<64 hex>  # pin the exact model; a different one is treated as unavailable
+
+upstreams:
+  - name: openai
+    style: openai
+    base_url: https://api.openai.com/v1
+    api_key_env: OPENAI_API_KEY
+    models: ["gpt-4.1*", "gpt-4o*", "o4-mini"]
+  - name: anthropic
+    style: anthropic
+    base_url: https://api.anthropic.com
+    api_key_env: ANTHROPIC_API_KEY
+    models: ["claude-*"]
+  - name: gemini
+    style: openai
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai
+    api_key_env: GEMINI_API_KEY
+    models: ["gemini-*"]
+  # OpenRouter, both of its APIs with one key (docs/GUIDE.md#openrouter). Recognised from the host.
+  # - name: openrouter
+  #   style: openai
+  #   base_url: https://openrouter.ai/api/v1
+  #   api_key_env: OPENROUTER_API_KEY
+  #   models: ["anthropic/claude-sonnet-5.5", "google/gemini-3.8-flash"]   # "*" also allows routers and any model
+  #   openrouter:
+  #     data_collection: deny            # deny: only providers that do not store prompts | client: the request decides
+  #     zdr: false                       # true: zero-data-retention endpoints only
+  #     only: []                         # provider slugs a request may use (empty: any)
+  #     ignore: []                       # provider slugs always excluded
+  #     model_choosing_plugins: if_any_model   # if_any_model | block: the auto router, fusion and other routers
+  #   headers: {HTTP-Referer: "https://intranet.example", X-Title: "Support desk"}   # static, e.g. app attribution
+  #   list_models: auto                  # auto | configured | upstream: what GET /v1/models lists
+  #   dialect: auto                      # auto | standard | openrouter
+  #   auth_scheme: auto                  # auto | bearer | x-api-key
+  # - name: openrouter-messages          # the Anthropic-style API, for Claude Code (ANTHROPIC_BASE_URL)
+  #   style: anthropic
+  #   base_url: https://openrouter.ai/api
+  #   api_key_env: OPENROUTER_API_KEY
+  #   models: ["anthropic/*"]
+  #   openrouter: {data_collection: deny, zdr: false}
+
+logging:
+  level: INFO                    # DEBUG is refused in production
+  audit: true                    # one metadata-only JSON line per request
