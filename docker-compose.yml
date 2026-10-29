@@ -40,7 +40,7 @@ services:
   # Set HARPO_KEY to a gateway key (harpo init) and server.host to 0.0.0.0 in the gateway config.
   open-webui:
     profiles: [chat]
-    image: ghcr.io/open-webui/open-webui:v0.11.4   # a release, not :main; Dependabot proposes newer ones
+    image: ghcr.io/open-webui/open-webui:v0.12.5   # a release, not :main; Dependabot proposes newer ones
     restart: unless-stopped
     environment:
       OPENAI_API_BASE_URL: http://gateway:8080/v1

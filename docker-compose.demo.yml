@@ -11,7 +11,7 @@ services:
     command: ["demo", "--host", "0.0.0.0", "--no-browser"]
     ports: ["127.0.0.1:8080:8080"]
   open-webui:
-    image: ghcr.io/open-webui/open-webui:v0.11.4   # a release, not :main
+    image: ghcr.io/open-webui/open-webui:v0.12.5   # a release, not :main
     environment:
       OPENAI_API_BASE_URL: http://gateway:8080/v1
       OPENAI_API_KEY: demo
