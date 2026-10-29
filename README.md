@@ -106,18 +106,25 @@ export OPENAI_API_KEY=sk-...    # stays on the gateway; your apps only hold the 
 harpo serve                     # reads ./harpo.yaml or config/harpo.yaml; Ctrl+C for a clean shutdown
 ```
 
+**Keys.** Your provider's key (`sk-...`) is configured on the gateway, never in your app: the boot scripts keep it
+in `.harpo/.env`; with `harpo serve`, set it in the gateway's environment (`export OPENAI_API_KEY=sk-...`).
+Your app gets a Harpo gateway key (`harpo_...`, printed by `harpo init`) instead.
+
 Then change one line in your app:
 
 ```python
 # OpenAI-compatible: the OpenAI SDKs, LangChain, LlamaIndex, most tools
-client = OpenAI(base_url="http://localhost:8080/v1", api_key="harpo_...")    # the gateway key
+client = OpenAI(base_url="http://localhost:8080/v1", api_key="harpo_...")    # the gateway key, not your sk-... key
 # Anthropic-compatible: the Anthropic SDKs, Claude Code
 client = Anthropic(base_url="http://localhost:8080", api_key="harpo_...")
 ```
 
 ```bash
+# in your app's environment (not the gateway's)
 export OPENAI_BASE_URL=http://localhost:8080/v1     # OpenAI SDKs and most tools
+export OPENAI_API_KEY=harpo_...                     # the gateway key, not your sk-... key
 export ANTHROPIC_BASE_URL=http://localhost:8080     # Anthropic SDKs, Claude Code
+export ANTHROPIC_API_KEY=harpo_...                  # Claude Code: ANTHROPIC_AUTH_TOKEN
 ```
 
 **From Python code.** The SDK runs the same engine in your process, or drives a running gateway
