@@ -26,7 +26,7 @@ model provider, then independently verifies the outgoing payload at egress.
 - **Verified at egress.** After redaction, the exact outgoing body is scanned again. A protected value that is still
   there blocks the request.
 - **Provider-neutral.** OpenAI- and Anthropic-style APIs in front of OpenAI, Anthropic, Gemini, OpenRouter, Mistral,
-  Groq, DeepSeek or a local Ollama. Your apps change one base URL.
+  Groq, DeepSeek or a local Ollama. Your apps change their base URL and use a Harpo gateway key.
 - **Keys never leave.** API keys, tokens, passwords and private keys are always redacted, whatever the policy says.
   Provider keys stay on the gateway; apps hold gateway keys.
 - **No prompt content in telemetry.** Logs, metrics and audit lines carry counts, codes and timings. Placeholders are
@@ -108,7 +108,10 @@ harpo serve                     # reads ./harpo.yaml or config/harpo.yaml; Ctrl+
 
 **Keys.** Your provider's key (`sk-...`) is configured on the gateway, never in your app: the boot scripts keep it
 in `.harpo/.env`; with `harpo serve`, set it in the gateway's environment (`export OPENAI_API_KEY=sk-...`).
-Your app gets a Harpo gateway key (`harpo_...`, printed by `harpo init`) instead.
+
+Your app gets a Harpo gateway key (`harpo_...`) instead: `harpo init` prints it; the boot scripts save it in
+`.harpo/gateway-key.txt` and copy it to your clipboard.
+
 
 Then change one line in your app:
 
@@ -233,7 +236,7 @@ Every family has one switch, in the configuration file or live on the Policy pag
 
 ## Works with what you already use
 
-Every integration is one setting, the base URL. Copy-paste configuration for each is in
+Every integration is two settings: the base URL and the gateway key. Copy-paste configuration for each is in
 [docs/integrations](docs/integrations/README.md) and in the console, with your address and key filled in.
 ✓ means the snippet runs end to end against the gateway in [`tools/verify_integrations.sh`](tools/verify_integrations.sh).
 
