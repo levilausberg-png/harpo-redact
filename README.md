@@ -10,7 +10,6 @@
 credentials, personal data and sensitive identifiers on your own infrastructure before a request reaches an external
 model provider, then independently verifies the outgoing payload at egress.
 
-[![CI](https://github.com/levilausberg-png/harpo-redact/actions/workflows/ci.yml/badge.svg)](https://github.com/levilausberg-png/harpo-redact/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache_2.0-e11d48)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12%2B-0f172a)](pyproject.toml)
 [![ProwlBench F1](https://img.shields.io/badge/ProwlBench-F1_0.941-2ee6a8)](docs/EXTERNAL_BENCHMARKS.md)
