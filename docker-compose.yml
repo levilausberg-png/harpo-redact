@@ -57,7 +57,7 @@ services:
 
   ollama:
     profiles: [slm]
-    image: ollama/ollama:0.21.0     # pin by digest in production: ollama/ollama@sha256:...
+    image: ollama/ollama:0.40.11     # pin by digest in production: ollama/ollama@sha256:...
     restart: unless-stopped
     environment:
       OLLAMA_KEEP_ALIVE: 30m
@@ -69,7 +69,7 @@ services:
 
   ollama-pull:
     profiles: [slm-setup]
-    image: ollama/ollama:0.21.0
+    image: ollama/ollama:0.40.11
     entrypoint: ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull llama3.2:3b"]
     volumes:
       - ollama-models:/root/.ollama
