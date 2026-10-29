@@ -76,8 +76,8 @@ cd harpo-redact
 ```powershell
 git clone https://github.com/levilausberg-png/harpo-redact
 cd harpo-redact
-.\boot.cmd         # or double-click boot.cmd
-.\stop.cmd
+.\boot.cmd         # or .\boot.ps1 (PowerShell); double-click boot.cmd
+.\stop.cmd         # or .\stop.ps1 (PowerShell)
 ```
 
 </td></tr>
